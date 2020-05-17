@@ -4,12 +4,16 @@ build:
 serve:
 	mkdocs serve
 
-publish: clean build
-	cp -rv site/* fruitnanny.github.io/
+publish: build public/
+	rm -rf public/*
+	cp -rv site/* public/
 
-	mkdir fruitnanny.github.io/debian
-	cp -rv debian/dists fruitnanny.github.io/debian/
-	cp -rv debian/pool fruitnanny.github.io/debian/
+	mkdir public/debian
+	cp -rv debian/dists public/debian/
+	cp -rv debian/pool public/debian/
 
-clean:
-	rm -rf fruitnanny.github.io/*
+	git -C public/ add .
+	scripts/git-commit.sh
+
+public/:
+	git worktree add public/ master

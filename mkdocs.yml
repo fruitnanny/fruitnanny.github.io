@@ -1,6 +1,8 @@
 site_name: FruitNanny
+site_url: https://fruitnanny.github.com/
 repo_name: GitHub
-repo_url: https://github.com/fruitnanny/fruitnanny-website
+repo_url: https://github.com/fruitnanny/fruitnanny.github.io/
+edit_uri: edit/docs/source/
 nav:
   - index.md
   - crafting.md

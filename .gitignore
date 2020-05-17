@@ -5,3 +5,7 @@ debian/pool/
 
 # mkdocs build results
 site/
+
+# git workdir holding the "master" branch for publishing
+public/
+
