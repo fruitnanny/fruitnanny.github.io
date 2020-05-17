@@ -1,0 +1,7 @@
+# Debian package repository (reprepo)
+debian/db/
+debian/dists/
+debian/pool/
+
+# mkdocs build results
+site/

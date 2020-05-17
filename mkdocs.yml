@@ -1,0 +1,15 @@
+site_name: FruitNanny
+repo_name: GitHub
+repo_url: https://github.com/fruitnanny/fruitnanny-website
+theme:
+  name: material
+  favicon: images/favicon.png
+  icon:
+    logo: material/camera-iris
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  # - git-revision-date-localized
+  - toc:
+      permalink: true

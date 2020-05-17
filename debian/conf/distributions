@@ -1,0 +1,7 @@
+Origin: fruitnanny.github.io/debian
+Label: fruitnanny.github.io/debian
+Codename: buster
+Architectures: armhf source
+Components: main
+Description: FruitNanny Debian repository
+SignWith: FBA1C1BC6D73F4599C19D6EA2B5AA90034335D51
