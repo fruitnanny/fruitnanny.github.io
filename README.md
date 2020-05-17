@@ -1,6 +1,6 @@
-# FruitNanny
+# FruitNanny Website
 
-https://fruitnanny.github.io/
+Website for the [FruitNanny](https://fruitnanny.github.io/) project.
 
 
 ## Installation
@@ -15,6 +15,7 @@ pip install mkdocs-material
 pip install mkdocs-git-revision-date-localized-plugin
 
 ```
+
 
 ## References
 
