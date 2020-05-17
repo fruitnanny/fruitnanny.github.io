@@ -1,6 +1,12 @@
 site_name: FruitNanny
 repo_name: GitHub
 repo_url: https://github.com/fruitnanny/fruitnanny-website
+nav:
+    - index.md
+    - repository.md
+    - crafting.md
+    - api.md
+    - ui.md
 theme:
   name: material
   favicon: images/favicon.png
