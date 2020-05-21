@@ -1,28 +1,28 @@
 Origin: fruitnanny.github.io/debian
 Label: fruitnanny.github.io/debian
 Codename: buster
-Date: Thu, 21 May 2020 16:19:37 UTC
+Date: Thu, 21 May 2020 16:59:58 UTC
 Architectures: armhf
 Components: main
 Description: FruitNanny Debian repository
 MD5Sum:
- 7c53e2e0abf286896df5bd4c7cc424b6 1970 main/binary-armhf/Packages
- e65a8c397cd6a8c27c1630cd72739d35 988 main/binary-armhf/Packages.gz
+ d15a6e8ef13e1e601d399316e8bc6e22 1970 main/binary-armhf/Packages
+ 3a930812001044c2cea9a95399e3766c 987 main/binary-armhf/Packages.gz
  3b9842399827d83814417b42b7c1ce91 149 main/binary-armhf/Release
- e5d60b731617f520ce2c274eb1a06f6c 1837 main/source/Sources
- c4bb5397d0d5ddbf22dadb131e6d04ba 773 main/source/Sources.gz
+ 0d451b5113a3457a7aaf4b43c083cac0 1837 main/source/Sources
+ 6d949ffe8bcf7ad7e335174fb637aca8 772 main/source/Sources.gz
  00cf09ce51e107fac88a88cd3a5e9c7f 150 main/source/Release
 SHA1:
- 16fe14532aeef252de934bf6dea60373fd38cc3e 1970 main/binary-armhf/Packages
- 202da2b3f03091f68697a4cbe46a5b46fd46f1d4 988 main/binary-armhf/Packages.gz
+ 905a9e30d24cd90d5d1f3c1532cc27ef22a207a1 1970 main/binary-armhf/Packages
+ c6eb9c3f455fed2160434305cd334b465d11628b 987 main/binary-armhf/Packages.gz
  45bd90fbc46420fd6093392fc8802a1222636f58 149 main/binary-armhf/Release
- 0149bbf3ce88220f4f539faa573e60c83a0f86c9 1837 main/source/Sources
- b4cbb947db2c6bfb8453121fae24659e337b9f94 773 main/source/Sources.gz
+ 1ee503a1870a7aa05bca678602eaf64d9555c6f2 1837 main/source/Sources
+ 283df9476b538c37e9d66e43cd45f85d250a026b 772 main/source/Sources.gz
  222a2c3fedece78b9c25519e11eb2118c91357e6 150 main/source/Release
 SHA256:
- 4ee7d1b9233d200318b93c26fe3ee56ddb06981f7297c8753e82970abcbb8f9f 1970 main/binary-armhf/Packages
- 4ec37e340d273f4aae1d54bc41b1a1e06f2c873ec6c0e9e618e03694cf15920d 988 main/binary-armhf/Packages.gz
+ c9856272f107171ccd395ce56ff0e2bfc6b584025f3ebd057852a3eab9046aff 1970 main/binary-armhf/Packages
+ d625336953675bf5e2ea1a57f478ceba036c9533a281aa245726a7be0de6152d 987 main/binary-armhf/Packages.gz
  faa4deadea80ff46d918bc8dd15f59c4b1a256d6934b434798b3ec54c8f6b07c 149 main/binary-armhf/Release
- 71fe8f127b5a19118550d6dd943eb2bdaa109eaa3376f4860330e9af277fefa7 1837 main/source/Sources
- b28bb1ea8510b1cf688ef9893a240429ef12247019c278495ce800707e339c97 773 main/source/Sources.gz
+ 0232d0744d9e29675a9720d917ef78127e52f67dc62d0d0a3944fd8a0ce76ef7 1837 main/source/Sources
+ 2fd8f9f94e2f6984f972f91a7ad887ad1c42cc93f7834347db40178999fc1976 772 main/source/Sources.gz
  7a74e27da205722f6a159721aa1f38d6f7d73d5fdabd1af29c8135c0fe19aeeb 150 main/source/Release
