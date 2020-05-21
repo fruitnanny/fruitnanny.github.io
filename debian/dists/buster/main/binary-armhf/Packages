@@ -29,3 +29,23 @@ SHA1: a0f3760aa160a044d23d96666edea09745e19465
 MD5sum: d4901a0d79eb8e45840a1ebd6371942c
 Description: FruitNanny UI
 
+Package: rws
+Version: 0.73.2
+Architecture: armhf
+Maintainer: Lyu,KeunChang <lyu.keun.chang@gmail.com>
+Installed-Size: 46778
+Depends: libc6 (>= 2.17), libgcc1 (>= 1:4.4.0), zlib1g (>= 1:1.2.0.2), init-system-helpers (>= 1.18~)
+Homepage: https://github.com/kclyu/rpi-webrtc-streamer
+Priority: optional
+Section: misc
+Filename: pool/main/r/rws/rws_0.73.2_armhf.deb
+Size: 15465068
+SHA256: 0762b304f1871f10dd5fac84864389938c5248fcc87a8a036b4814edc99b3956
+SHA1: cae754917e0a8e022a462e672bf641783f2fa17a
+MD5sum: d3842d5861a66b14dfdb7e7f9de173f4
+Description: WebRTC H.264 streaming server using Raspberry PI camera board.
+ RWS (rpi-webrtc-streamer) is a WebRTC H.264 streamer designed to run
+ on Raspberry PI and Raspberry PI camera board hardware.
+ MMAL is used for performance and speed, and H.264 video stream and audio stream
+ are provided to Browser or WebRTC client in conjunction with WebRTC native code package.
+
