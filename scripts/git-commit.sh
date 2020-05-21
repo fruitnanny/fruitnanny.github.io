@@ -1,5 +1,5 @@
 #!/bin/bash
-prev=$(git -C public/ log --format=%s -n 1 HEAD | grep -oP "(?<=^Publish commit )[a-z0-9]{40}$")
+prev=$(git -C public/ log --format=%s | grep -oP "(?<=^Publish commit )[a-z0-9]{40}$" | head -n1)
 
 if [[ "$prev" == "" ]]; then
 	echo "Error: cannot find previous commit" > /dev/stderr
