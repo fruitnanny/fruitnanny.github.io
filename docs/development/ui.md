@@ -1,3 +1,7 @@
+---
+title: Web Interface
+---
+
 # UI
 
 !!! todo
