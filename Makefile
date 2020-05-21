@@ -1,6 +1,9 @@
 build:
 	mkdocs build
 
+serve:
+	mkdocs serve
+
 publish: clean build
 	cp -rv site/* fruitnanny.github.io/
 
