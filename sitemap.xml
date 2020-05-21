@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
+     <loc>https://fruitnanny.github.com/</loc>
+     <lastmod>2020-05-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://fruitnanny.github.com/crafting/</loc>
+     <lastmod>2020-05-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://fruitnanny.github.com/setup/</loc>
+     <lastmod>2020-05-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://fruitnanny.github.com/development/api/</loc>
+     <lastmod>2020-05-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://fruitnanny.github.com/development/ui/</loc>
+     <lastmod>2020-05-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+</urlset>

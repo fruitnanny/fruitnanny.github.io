@@ -1,0 +1,5 @@
+Component: main
+Origin: fruitnanny.github.io/debian
+Label: fruitnanny.github.io/debian
+Architecture: armhf
+Description: FruitNanny Debian repository

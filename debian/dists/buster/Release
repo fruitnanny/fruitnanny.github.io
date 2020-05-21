@@ -1,0 +1,28 @@
+Origin: fruitnanny.github.io/debian
+Label: fruitnanny.github.io/debian
+Codename: buster
+Date: Thu, 21 May 2020 15:59:23 UTC
+Architectures: armhf
+Components: main
+Description: FruitNanny Debian repository
+MD5Sum:
+ 0adfdba6866189692312b0a163bf5dc8 1058 main/binary-armhf/Packages
+ 3eaa43c9c57442298aa43bd24cbbc040 556 main/binary-armhf/Packages.gz
+ 3b9842399827d83814417b42b7c1ce91 149 main/binary-armhf/Release
+ e5d60b731617f520ce2c274eb1a06f6c 1837 main/source/Sources
+ c4bb5397d0d5ddbf22dadb131e6d04ba 773 main/source/Sources.gz
+ 00cf09ce51e107fac88a88cd3a5e9c7f 150 main/source/Release
+SHA1:
+ 88cc4c08a3931f5637e4596957d98a7160c66fd8 1058 main/binary-armhf/Packages
+ 62b98423ce3f5c8b91b369412b6d7f05461250d5 556 main/binary-armhf/Packages.gz
+ 45bd90fbc46420fd6093392fc8802a1222636f58 149 main/binary-armhf/Release
+ 0149bbf3ce88220f4f539faa573e60c83a0f86c9 1837 main/source/Sources
+ b4cbb947db2c6bfb8453121fae24659e337b9f94 773 main/source/Sources.gz
+ 222a2c3fedece78b9c25519e11eb2118c91357e6 150 main/source/Release
+SHA256:
+ 958982143db0381d5cc761743ea0014e3c943b9b39c5cc94fe66e5f056c7121a 1058 main/binary-armhf/Packages
+ e274271bb1bede9183ccdb55a2af53b10d34baccd10f801261bcfec4021f1672 556 main/binary-armhf/Packages.gz
+ faa4deadea80ff46d918bc8dd15f59c4b1a256d6934b434798b3ec54c8f6b07c 149 main/binary-armhf/Release
+ 71fe8f127b5a19118550d6dd943eb2bdaa109eaa3376f4860330e9af277fefa7 1837 main/source/Sources
+ b28bb1ea8510b1cf688ef9893a240429ef12247019c278495ce800707e339c97 773 main/source/Sources.gz
+ 7a74e27da205722f6a159721aa1f38d6f7d73d5fdabd1af29c8135c0fe19aeeb 150 main/source/Release
