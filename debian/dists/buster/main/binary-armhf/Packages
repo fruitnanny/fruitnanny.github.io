@@ -15,18 +15,18 @@ MD5sum: 7ebce1597430cccd2b4cc772b3e1b8ba
 Description: FruitNanny API
 
 Package: fruitnanny-ui
-Version: 20.05.2
+Version: 20.05.3
 Architecture: all
 Maintainer: Lucas Kahlert <lucas.kahlert@square-src.de>
-Installed-Size: 11427
+Installed-Size: 11638
 Homepage: https://github.com/fruitnanny/fruitnanny-ui
 Priority: optional
 Section: web
-Filename: pool/main/f/fruitnanny-ui/fruitnanny-ui_20.05.2_all.deb
-Size: 3833856
-SHA256: 07dbb45a16699ad954facd7426f9ec198048caaf6a7fef1a127571d2728846de
-SHA1: c660a83f2bfeb6deec1f4451e242b59c264470f0
-MD5sum: 7871f27d6824083d34357b8023d59e8a
+Filename: pool/main/f/fruitnanny-ui/fruitnanny-ui_20.05.3_all.deb
+Size: 3835852
+SHA256: 1cd0526bb42b164ab6bf033aaa3dca99da54690b6916d079ea4a395e73dfd70e
+SHA1: 752d6d9d2bb040e4f874adef4cc62299659f6b5d
+MD5sum: 63d20594ca51c8e7b4dbddee01718f63
 Description: FruitNanny UI
 
 Package: rws
