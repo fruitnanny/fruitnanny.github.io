@@ -4,35 +4,35 @@ Hash: SHA256
 Origin: fruitnanny.github.io/debian
 Label: fruitnanny.github.io/debian
 Codename: buster
-Date: Thu, 21 May 2020 22:34:10 UTC
+Date: Fri, 22 May 2020 00:19:44 UTC
 Architectures: armhf
 Components: main
 Description: FruitNanny Debian repository
 MD5Sum:
- ce0cd22e34c34b59a0b0d171e4af77a2 1970 main/binary-armhf/Packages
- 92e425948be6df711434056ba96e56b4 990 main/binary-armhf/Packages.gz
+ 5e9add5c87d171ef550fa76b05d35f3d 1970 main/binary-armhf/Packages
+ 0fe88c178d962acd47b3f51687d9e883 991 main/binary-armhf/Packages.gz
  3b9842399827d83814417b42b7c1ce91 149 main/binary-armhf/Release
- 6b889b0d391f655fde26e3fa25f43d82 1837 main/source/Sources
- 7fe1feeefeef54a824e0ae776197b695 773 main/source/Sources.gz
+ 3c0bb51d14de58a770744be3f17633e0 1837 main/source/Sources
+ 35f31bf7fec4f407495d10b7d3e69220 771 main/source/Sources.gz
  00cf09ce51e107fac88a88cd3a5e9c7f 150 main/source/Release
 SHA1:
- 84c005db2b416e1d47d972772075c062173e9d43 1970 main/binary-armhf/Packages
- 613356fe35ba52b5fc64fb01956d78ce6946d527 990 main/binary-armhf/Packages.gz
+ 4518c25afcac948ed88aff8f59d5cee7ab4e6158 1970 main/binary-armhf/Packages
+ 8945b17de4575514555bcd5a0e15a7ef4fadcce6 991 main/binary-armhf/Packages.gz
  45bd90fbc46420fd6093392fc8802a1222636f58 149 main/binary-armhf/Release
- 4fa9f12d1e7dfa5ff113013e1bfbe74244f9d08e 1837 main/source/Sources
- 61db13f5b23740ed15dbcdb5b9a614ed523af6e9 773 main/source/Sources.gz
+ 4d0144dc533c64d1f462aebb583229575c150b77 1837 main/source/Sources
+ 54a22ee6dba99c044058d29c8b391dccab69a4a8 771 main/source/Sources.gz
  222a2c3fedece78b9c25519e11eb2118c91357e6 150 main/source/Release
 SHA256:
- 12f867e9134d42a0b15c672d03764fe5214015947457327b350eea5789a16070 1970 main/binary-armhf/Packages
- 5685dde2cf7fbc15d27927745583265a35b76fab240252ccff0166c7789dc72f 990 main/binary-armhf/Packages.gz
+ 8b29242345b87ad93f3d2d954709dc0e47bb945b64e82635bb014d4f7791a38a 1970 main/binary-armhf/Packages
+ 3e93e2a2e376f718fdebe1748186ff3ae1d757eee42ae2ef8dc2b598e6c87091 991 main/binary-armhf/Packages.gz
  faa4deadea80ff46d918bc8dd15f59c4b1a256d6934b434798b3ec54c8f6b07c 149 main/binary-armhf/Release
- 39c71ef90973eb483e834498b61a6f796dc1be61bf64f04015037f51c41ef6c2 1837 main/source/Sources
- e7a136084c6134ebd131a4cf831d1e666279269ca7311404ccf1b72d4777c4a6 773 main/source/Sources.gz
+ 53d4d77b9b646bb00787348158f0b30f5d127b229c6a934c34e1e48581fc43ad 1837 main/source/Sources
+ 9bdaadb1d234fb8298f27ad4a845f6ba60c29153aa46a3951383e74d78c001d7 771 main/source/Sources.gz
  7a74e27da205722f6a159721aa1f38d6f7d73d5fdabd1af29c8135c0fe19aeeb 150 main/source/Release
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYIAB0WIQT7ocG8bXP0WZwZ1uorWqkANDNdUQUCXscB4gAKCRArWqkANDNd
-UYbSAP90cmcGnS41N/pz3YS01MHs7letf8KOtbN14Ct66Q1czQEAvc702eOll+J6
-qKdAKeE2buNwwVsKsCAu7n9mEa3LTww=
-=Tw2J
+iHUEARYIAB0WIQT7ocG8bXP0WZwZ1uorWqkANDNdUQUCXscaoAAKCRArWqkANDNd
+UW8BAP9etSnM/1byeSI1KJanNEIhKZSdY/3a1NKXgHHLMVaeUAD+Jbz47nIkuMT6
+ogqhY1KSsXZphQ+pR/30QbVytRDG4wE=
+=+ZVs
 -----END PGP SIGNATURE-----
