@@ -49,3 +49,27 @@ Description: WebRTC H.264 streaming server using Raspberry PI camera board.
  MMAL is used for performance and speed, and H.264 video stream and audio stream
  are provided to Browser or WebRTC client in conjunction with WebRTC native code package.
 
+Package: wpasupplicant
+Source: wpa
+Version: 2:2.9.0-13
+Architecture: armhf
+Maintainer: Debian wpasupplicant Maintainers <wpa@packages.debian.org>
+Installed-Size: 2702
+Depends: libc6 (>= 2.28), libdbus-1-3 (>= 1.9.14), libnl-3-200 (>= 3.2.21), libnl-genl-3-200 (>= 3.2.7), libnl-route-3-200 (>= 3.4.0), libpcsclite1 (>= 1.0.0), libreadline7 (>= 6.0), libssl1.1 (>= 1.1.1), lsb-base, adduser
+Suggests: wpagui, libengine-pkcs11-openssl
+Breaks: initscripts (<< 2.88dsf-13.3)
+Multi-Arch: foreign
+Homepage: https://w1.fi/wpa_supplicant/
+Priority: optional
+Section: net
+Filename: pool/main/w/wpa/wpasupplicant_2.9.0-13_armhf.deb
+Size: 1019068
+SHA256: 833027087e1bce28a081ac3ac0187fbd34ace376a8f51a9d7ea493557773aba9
+SHA1: 9d401fc592019d2c70786f5651a141b516231655
+MD5sum: ef732179c3ef90702f38624c97dd7e2f
+Description: client support for WPA and WPA2 (IEEE 802.11i)
+ WPA and WPA2 are methods for securing wireless networks, the former
+ using IEEE 802.1X, and the latter using IEEE 802.11i. This software
+ provides key negotiation with the WPA Authenticator, and controls
+ association with IEEE 802.11i networks.
+
