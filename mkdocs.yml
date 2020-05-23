@@ -25,6 +25,8 @@ theme:
   palette:
     primary: blue
     accent: pink
+extra_css:
+  - css/extra.css
 plugins:
   - git-revision-date-localized
   - search
