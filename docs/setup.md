@@ -40,7 +40,7 @@ Now, insert the SD card and determine the device path. In our example this is
 
 !!! warning
 	Double check the device path. The following operation will destroy any
-	data on the output device. 
+	data on the output device.
 
 ```bash
 # Write Raspbian image to SD card
@@ -65,12 +65,12 @@ sudo touch /mnt/ssh
 
 # Unmount boot partition again
 sudo umount /mnt
-``` 
+```
 
 The SD card is now ready to boot the Raspberry Pi.
 
 
-## Connect Raspberry to host 
+## Connect Raspberry to host
 
 All further commands will be executed via ssh directly on the Raspberry. For
 this, the host computer needs to connect the Raspberry. There are two options:
@@ -84,19 +84,24 @@ this, the host computer needs to connect the Raspberry. There are two options:
    command line.
 
 !!! note
-    Replace the interface name (ifname) `eno1` with the name of the ethernet
-    interface that will be connected to the Raspberry Pi. The interfaces can be
-    inspected with `ip addr`. 
+	Replace the interface name (ifname) `eno1` with the name of the ethernet
+	interface that will be connected to the Raspberry Pi. The interfaces can be
+	inspected with `ip addr`.
 
 ```bash
-# Create shared Ethernet connection via NetworkManager 
-nmcli connection add  con-name "Raspberry Pi" type ethernet ipv4.method shared ifname eno1 
+# Create shared Ethernet connection via NetworkManager
+nmcli connection add \
+    con-name "Raspberry Pi" \
+    type ethernet \
+    ipv4.method shared \
+    ipv4.addresses 10.43.0.1/24 \
+    ifname eno1
 ```
 
 !!! note
-    The IP address can queries via mDNS with the hostname `raspberry.local`.
-    Ensure that mDNS is available on your system, either via Avahi or
-    systemd-resolve.
+	The IP address can queries via mDNS with the hostname `raspberry.local`.
+	Ensure that mDNS is available on your system, either via Avahi or
+	systemd-resolve.
 
 After figering out the connection method, insert the SD card into the
 Raspberry and boot the device.
@@ -144,6 +149,18 @@ sudo sed -i "s/^options snd-usb-audio index=-2/# options snd-usb-audio index=-2 
     /lib/modprobe.d/aliases.conf
 ```
 
+The gain of the microphone is increased to be more sensitive. We can either
+use `alsamixer` (*F4 Capture*) or set the gain directly via command line:
+
+!!! note
+    23.81 dB (100%) might be too senstive. Choose the value that fits best
+    your needs.
+
+```bash
+# Set the gain of the USB microphone to 100%
+sudo amixer set 'Mic',0 100%
+```
+
 
 ## Disable Bluetooth
 
@@ -173,13 +190,28 @@ echo -e "\n# Enable DHT11/22 iio kernel driver\ndtoverlay=dht11,gpiopin=24\n" \
 ```
 
 
+## Optional: Use heatbeat for activity LED
+
+The green activity of the Raspberry Pi can be used as heartbeat beacon. It
+will blink in a fixed period signalling that the device is still up and
+running.
+
+```bash
+# Load LED heartbeat kernel module
+sudo modprobe ledtrig-heartbeat
+
+# Enable heartbeat for activity LED
+echo heartbeat | sudo tee /sys/class/leds/led0/trigger
+```
+
+
 ## Install NetworkManager
 
 FruitNanny uses [NetworkManager](https://wiki.gnome.org/Projects/NetworkManager)
 to control the WiFi networking via its DBus interface.
 
 ```bash
-# Remove default Raspbian DHCP client 
+# Remove default Raspbian DHCP client
 sudo apt-get remove dhcpcd5
 
 # Install NetworkManager
@@ -191,11 +223,11 @@ sudo apt-get install network-manager
 
 FruitNanny web service will be available under the mDNS hostname
 `fruitnanny.local`. The standard Raspbian hostname `raspberry` will be
-replaced by `fruitnanny`. 
+replaced by `fruitnanny`.
 
 !!! note
-    If you prefer a different hostname, adjust it to your liking. The hostname
-    is not hard coded in the web UI and should work out-of-the box.
+	If you prefer a different hostname, adjust it to your liking. The hostname
+	is not hard coded in the web UI and should work out-of-the box.
 
 ```bash
 # Change hostname
@@ -203,6 +235,15 @@ sudo hostnamectl set-hostname fruitnanny
 
 # Resolve new hostname to localhost
 echo -e "127.0.1.1\t$(hostname)\n" | sudo tee -a /etc/hosts
+```
+
+
+## Enable Camera
+
+Use `raspi-config` to enable the camera under *5 Interfacing Options* – *P1 Camera*.
+
+```bash
+sudo raspi-config
 ```
 
 
@@ -253,6 +294,11 @@ DNS configuration:
 Finally, the FruitNanny packages will be installed. They are provided as
 Debian packages and hosted as Debian package repository via GitHub Pages.
 
+!!!note
+	The `wpasupplicant` package is a buster backport of the bullseye package.
+	It provides a version 2.9.0 of wpa-supplicant which solve connection
+	problems of newer Android devices with the Raspberry Pi hotspot.
+
 ```bash
 # Add FruitNanny GPG key
 curl -sL https://fruitnanny.github.io/pubkey.gpg | sudo apt-key add -
@@ -263,8 +309,51 @@ echo "deb https://fruitnanny.github.io/debian buster main" | sudo tee /etc/apt/s
 # Update package index
 sudo apt update
 
-# Install FruitNanny packages
-sudo apt install fruitnanny-api
+# Install WebRTC streamer, FruitNanny and wpa-supplicant packages
+sudo apt install rws fruitnanny-ui fruitnanny-api wpasupplicant
+```
+
+
+## Configure RPi-WebRTC-Streamer
+
+The WebRTC streamer comes with a bundled web server for static files.
+FruitNanny has its own static file server.
+
+```bash
+# Disable direct socket
+sudo sed -i "s/^direct_socket_enable=true/direct_socket_enable=false/" \
+    /opt/rws/etc/webrtc_streamer.conf
+```
+
+
+## Configure wpa-supplicant
+
+Ensure that `ap_scan` is set to `1` which means wpa-supplicant is responsible
+for scanning and selecting access points. This mode is required when using the
+driver `nl80211`.
+
+```
+ap_scan=1
+```
+
+```bash
+# Restart to load the new configuration
+sudo systemctl restart wpa_supplicant.service fruitnanny-api.service
+```
+
+
+## Enable Hotspot
+
+Create the NetworkManager connection profile for the Hotspot by requesting its
+connection details. These can be used to connect to the hotspot later. Enable
+the hotspot.
+
+```bash
+# Show password for the hotspot
+curl http://localhost/api/hotspot
+
+# Enable the hotspot connection (if not already enabled)
+sudo nmcli connection up "FruitNanny Hotspot"
 ```
 
 
