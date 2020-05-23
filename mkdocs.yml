@@ -5,6 +5,8 @@ repo_url: https://github.com/fruitnanny/fruitnanny.github.io/
 edit_uri: edit/source/docs
 nav:
   - index.md
+  - User:
+     - user/getting-started.md
   - crafting.md
   - setup.md
   - Development:
