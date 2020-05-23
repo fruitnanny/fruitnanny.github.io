@@ -23,6 +23,12 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.4b9ffd7b.min.css">
       
+        <link rel="stylesheet" href="../assets/stylesheets/palette.b79bcd20.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
       
     
     
@@ -35,6 +41,8 @@
     
     
     
+      <link rel="stylesheet" href="../css/extra.css">
+    
     
       
     
@@ -42,7 +50,9 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="pink">
   
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -138,6 +148,67 @@
       
       
         
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../user/getting-started/" class="md-tabs__link">
+          User Guide
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../crafting/" class="md-tabs__link md-tabs__link--active">
+          Crafting Guide
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../development/api/" class="md-tabs__link">
+          Development Guide
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
@@ -194,17 +265,17 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
-      User
+      User Guide
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
-    <nav class="md-nav" aria-label="User" data-md-level="1">
+    <nav class="md-nav" aria-label="User Guide" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
-        User
+        User Guide
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -215,8 +286,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../user/getting-started/" title="Getting started" class="md-nav__link">
-      Getting started
+    <a href="../user/getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
     </a>
   </li>
 
@@ -230,6 +301,33 @@
       
       
 
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Crafting Guide
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Crafting Guide" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Crafting Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
 
   <li class="md-nav__item">
     <a href="../crafting/" title="Crafting" class="md-nav__link">
@@ -237,10 +335,10 @@
     </a>
   </li>
 
-    
-      
-      
-      
+        
+          
+          
+          
 
   
 
@@ -328,6 +426,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#optional-use-heatbeat-for-activity-led" class="md-nav__link">
+    Optional: Use heatbeat for activity LED
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#install-networkmanager" class="md-nav__link">
     Install NetworkManager
   </a>
@@ -337,6 +442,13 @@
         <li class="md-nav__item">
   <a href="#change-hostname" class="md-nav__link">
     Change Hostname
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-camera" class="md-nav__link">
+    Enable Camera
   </a>
   
 </li>
@@ -355,10 +467,36 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#configure-rpi-webrtc-streamer" class="md-nav__link">
+    Configure RPi-WebRTC-Streamer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-wpa-supplicant" class="md-nav__link">
+    Configure wpa-supplicant
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-hotspot" class="md-nav__link">
+    Enable Hotspot
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
     
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -369,20 +507,20 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
-    <label class="md-nav__link" for="nav-5">
-      Development
+    <label class="md-nav__link" for="nav-4">
+      Development Guide
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
-    <nav class="md-nav" aria-label="Development" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+    <nav class="md-nav" aria-label="Development Guide" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
-        Development
+        Development Guide
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -491,6 +629,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#optional-use-heatbeat-for-activity-led" class="md-nav__link">
+    Optional: Use heatbeat for activity LED
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#install-networkmanager" class="md-nav__link">
     Install NetworkManager
   </a>
@@ -505,6 +650,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#enable-camera" class="md-nav__link">
+    Enable Camera
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#restart-the-device" class="md-nav__link">
     Restart the Device
   </a>
@@ -514,6 +666,27 @@
         <li class="md-nav__item">
   <a href="#fruitnanny-packages" class="md-nav__link">
     FruitNanny Packages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-rpi-webrtc-streamer" class="md-nav__link">
+    Configure RPi-WebRTC-Streamer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-wpa-supplicant" class="md-nav__link">
+    Configure wpa-supplicant
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-hotspot" class="md-nav__link">
+    Enable Hotspot
   </a>
   
 </li>
@@ -574,7 +747,7 @@ e.g. <code>/dev/mmcblk0p1</code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Double check the device path. The following operation will destroy any
-data on the output device. </p>
+data on the output device.</p>
 </div>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Write Raspbian image to SD card</span>
 sudo dd <span class="k">if</span><span class="o">=</span><span class="k">$(</span>ls *-raspbian-buster-lite.img<span class="k">)</span> <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>4M <span class="nv">status</span><span class="o">=</span>progress
@@ -614,10 +787,15 @@ this, the host computer needs to connect the Raspberry. There are two options:</
 <p class="admonition-title">Note</p>
 <p>Replace the interface name (ifname) <code>eno1</code> with the name of the ethernet
 interface that will be connected to the Raspberry Pi. The interfaces can be
-inspected with <code>ip addr</code>. </p>
+inspected with <code>ip addr</code>.</p>
 </div>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Create shared Ethernet connection via NetworkManager </span>
-nmcli connection add  con-name <span class="s2">&quot;Raspberry Pi&quot;</span> <span class="nb">type</span> ethernet ipv4.method shared ifname eno1 
+<div class="codehilite"><pre><span></span><code><span class="c1"># Create shared Ethernet connection via NetworkManager</span>
+nmcli connection add <span class="se">\</span>
+    con-name <span class="s2">&quot;Raspberry Pi&quot;</span> <span class="se">\</span>
+    <span class="nb">type</span> ethernet <span class="se">\</span>
+    ipv4.method shared <span class="se">\</span>
+    ipv4.addresses <span class="m">10</span>.43.0.1/24 <span class="se">\</span>
+    ifname eno1
 </code></pre></div>
 
 
@@ -664,6 +842,18 @@ sudo sed -i <span class="s2">&quot;s/^options snd-usb-audio index=-2/# options s
 </code></pre></div>
 
 
+<p>The gain of the microphone is increased to be more sensitive. We can either
+use <code>alsamixer</code> (<em>F4 Capture</em>) or set the gain directly via command line:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>23.81 dB (100%) might be too senstive. Choose the value that fits best
+your needs.</p>
+</div>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Set the gain of the USB microphone to 100%</span>
+sudo amixer <span class="nb">set</span> <span class="s1">&#39;Mic&#39;</span>,0 <span class="m">100</span>%
+</code></pre></div>
+
+
 <h2 id="disable-bluetooth">Disable Bluetooth<a class="headerlink" href="#disable-bluetooth" title="Permanent link">&para;</a></h2>
 <p>Currently, FruitNanny does not use Bluetooth. In order to save power, we are
 going to disable the Bluetooth chip via device tree and disable all related
@@ -686,10 +876,22 @@ be enabled via device tree.</p>
 </code></pre></div>
 
 
+<h2 id="optional-use-heatbeat-for-activity-led">Optional: Use heatbeat for activity LED<a class="headerlink" href="#optional-use-heatbeat-for-activity-led" title="Permanent link">&para;</a></h2>
+<p>The green activity of the Raspberry Pi can be used as heartbeat beacon. It
+will blink in a fixed period signalling that the device is still up and
+running.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Load LED heartbeat kernel module</span>
+sudo modprobe ledtrig-heartbeat
+
+<span class="c1"># Enable heartbeat for activity LED</span>
+<span class="nb">echo</span> heartbeat <span class="p">|</span> sudo tee /sys/class/leds/led0/trigger
+</code></pre></div>
+
+
 <h2 id="install-networkmanager">Install NetworkManager<a class="headerlink" href="#install-networkmanager" title="Permanent link">&para;</a></h2>
 <p>FruitNanny uses <a href="https://wiki.gnome.org/Projects/NetworkManager">NetworkManager</a>
 to control the WiFi networking via its DBus interface.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Remove default Raspbian DHCP client </span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Remove default Raspbian DHCP client</span>
 sudo apt-get remove dhcpcd5
 
 <span class="c1"># Install NetworkManager</span>
@@ -700,7 +902,7 @@ sudo apt-get install network-manager
 <h2 id="change-hostname">Change Hostname<a class="headerlink" href="#change-hostname" title="Permanent link">&para;</a></h2>
 <p>FruitNanny web service will be available under the mDNS hostname
 <code>fruitnanny.local</code>. The standard Raspbian hostname <code>raspberry</code> will be
-replaced by <code>fruitnanny</code>. </p>
+replaced by <code>fruitnanny</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you prefer a different hostname, adjust it to your liking. The hostname
@@ -711,6 +913,12 @@ sudo hostnamectl set-hostname fruitnanny
 
 <span class="c1"># Resolve new hostname to localhost</span>
 <span class="nb">echo</span> -e <span class="s2">&quot;127.0.1.1\t</span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">\n&quot;</span> <span class="p">|</span> sudo tee -a /etc/hosts
+</code></pre></div>
+
+
+<h2 id="enable-camera">Enable Camera<a class="headerlink" href="#enable-camera" title="Permanent link">&para;</a></h2>
+<p>Use <code>raspi-config</code> to enable the camera under <em>5 Interfacing Options</em> – <em>P1 Camera</em>.</p>
+<div class="codehilite"><pre><span></span><code>sudo raspi-config
 </code></pre></div>
 
 
@@ -755,6 +963,12 @@ status report similar to the following:</p>
 <h2 id="fruitnanny-packages">FruitNanny Packages<a class="headerlink" href="#fruitnanny-packages" title="Permanent link">&para;</a></h2>
 <p>Finally, the FruitNanny packages will be installed. They are provided as
 Debian packages and hosted as Debian package repository via GitHub Pages.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>wpasupplicant</code> package is a buster backport of the bullseye package.
+It provides a version 2.9.0 of wpa-supplicant which solve connection
+problems of newer Android devices with the Raspberry Pi hotspot.</p>
+</div>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Add FruitNanny GPG key</span>
 curl -sL https://fruitnanny.github.io/pubkey.gpg <span class="p">|</span> sudo apt-key add -
 
@@ -764,8 +978,42 @@ curl -sL https://fruitnanny.github.io/pubkey.gpg <span class="p">|</span> sudo a
 <span class="c1"># Update package index</span>
 sudo apt update
 
-<span class="c1"># Install FruitNanny packages</span>
-sudo apt install fruitnanny-api
+<span class="c1"># Install WebRTC streamer, FruitNanny and wpa-supplicant packages</span>
+sudo apt install rws fruitnanny-ui fruitnanny-api wpasupplicant
+</code></pre></div>
+
+
+<h2 id="configure-rpi-webrtc-streamer">Configure RPi-WebRTC-Streamer<a class="headerlink" href="#configure-rpi-webrtc-streamer" title="Permanent link">&para;</a></h2>
+<p>The WebRTC streamer comes with a bundled web server for static files.
+FruitNanny has its own static file server.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Disable direct socket</span>
+sudo sed -i <span class="s2">&quot;s/^direct_socket_enable=true/direct_socket_enable=false/&quot;</span> <span class="se">\</span>
+    /opt/rws/etc/webrtc_streamer.conf
+</code></pre></div>
+
+
+<h2 id="configure-wpa-supplicant">Configure wpa-supplicant<a class="headerlink" href="#configure-wpa-supplicant" title="Permanent link">&para;</a></h2>
+<p>Ensure that <code>ap_scan</code> is set to <code>1</code> which means wpa-supplicant is responsible
+for scanning and selecting access points. This mode is required when using the
+driver <code>nl80211</code>.</p>
+<div class="codehilite"><pre><span></span><code><span class="err">ap_scan=1</span>
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># Restart to load the new configuration</span>
+sudo systemctl restart wpa_supplicant.service fruitnanny-api.service
+</code></pre></div>
+
+
+<h2 id="enable-hotspot">Enable Hotspot<a class="headerlink" href="#enable-hotspot" title="Permanent link">&para;</a></h2>
+<p>Create the NetworkManager connection profile for the Hotspot by requesting its
+connection details. These can be used to connect to the hotspot later. Enable
+the hotspot.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Show password for the hotspot</span>
+curl http://localhost/api/hotspot
+
+<span class="c1"># Enable the hotspot connection (if not already enabled)</span>
+sudo nmcli connection up <span class="s2">&quot;FruitNanny Hotspot&quot;</span>
 </code></pre></div>
                 
                   
@@ -775,7 +1023,7 @@ sudo apt install fruitnanny-api
 <div class="md-source-date">
   <small>
     
-      Last update: May 21, 2020
+      Last update: May 23, 2020
     
   </small>
 </div>
@@ -834,6 +1082,10 @@ sudo apt install fruitnanny-api
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
+          <div class="md-footer-copyright__highlight">
+            Copyright © 2020 Lucas Kahlert
+          </div>
+        
         Made with
         <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs
@@ -852,7 +1104,7 @@ sudo apt install fruitnanny-api
       <script>
         app = initialize({
           base: "..",
-          features: [],
+          features: ["tabs"],
           search: Object.assign({
             worker: "../assets/javascripts/worker/search.37585f48.min.js"
           }, typeof search !== "undefined" && search)

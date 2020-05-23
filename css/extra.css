@@ -1,0 +1,24 @@
+/* Clear floating elements for each headline */
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+}
+
+/* Elevate images and rounded corners */
+img {
+	box-shadow: 0 .2rem .5rem rgba(0,0,0,.1),0 0 .1rem rgba(0,0,0,.2);
+	border-radius: 0.1rem;
+}
+
+/* Center all images inside content block */
+.md-content img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+img.float-right {
+	width: 30%;
+	float: right;
+	margin-left: 1rem;
+}

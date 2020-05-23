@@ -17,12 +17,18 @@
     
     
       
-        <title>FruitNanny</title>
+        <title>Home</title>
       
     
     
       <link rel="stylesheet" href="assets/stylesheets/main.4b9ffd7b.min.css">
       
+        <link rel="stylesheet" href="assets/stylesheets/palette.b79bcd20.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
       
     
     
@@ -35,6 +41,8 @@
     
     
     
+      <link rel="stylesheet" href="css/extra.css">
+    
     
       
     
@@ -42,7 +50,9 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="pink">
   
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -132,8 +142,255 @@
         
       
       
+	
+        
+          
+
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="." class="md-tabs__link md-tabs__link--active">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="user/getting-started/" class="md-tabs__link">
+          User Guide
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="crafting/" class="md-tabs__link">
+          Crafting Guide
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="development/api/" class="md-tabs__link">
+          Development Guide
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
         
       
+
+	<!-- Additional styles for landing page -->
+	<style>
+		:root {
+			--secondary-color: #46d954;
+		}
+
+		/* Application header should be static for the landing page */
+		.md-header {
+			position: initial;
+		}
+
+		/* Remove spacing, as we cannot hide it completely */
+		.md-main__inner {
+			margin: 0;
+		}
+
+		/* Hide main content for now */
+		.md-content {
+			display: none;
+		}
+
+		/* Gradient background + blob */
+		.tx-container {
+			padding-top: 1rem;
+			background:
+				url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M 1124,0 V 258 H 0 V 80 c 0,0 82,59 250,59 C 530,140 723,2 1124,2 Z' style='fill: white' /></svg>") no-repeat bottom,
+				linear-gradient(
+					to bottom,
+					var(--md-primary-fg-color),
+					var(--secondary-color) 99%,
+					white 99%
+				);
+		}
+
+		/* Hero image */
+		.hero-image {
+			border-radius: 1rem;
+			margin-bottom: 1rem;
+		}
+
+		/* Set inverted text color on hero */
+		.tx-hero {
+			margin: 0 .8rem;
+			color: var(--md-primary-bg-color);
+		}
+
+		/* Make main headline thicker */
+		.tx-hero h1 {
+			margin-bottom: 1rem;
+			color: currentColor;
+			font-weight: 700;
+		}
+
+		/* Ensure that blob doesn't overlap buttons */
+		.tx-hero__content {
+			padding-bottom: 6rem;
+		}
+
+		/* Use typography instead of color to emphasize links */
+		.tx-hero__content a,
+		.tx-hero__content a:hover {
+			color: white;
+			border-bottom: 1px dotted;
+		}
+
+		/* Adjust spacing of buttons and invert them */
+		.tx-hero .md-button {
+			margin-top: .5rem;
+			margin-right: .5rem;
+			color: var(--md-primary-bg-color);
+		}
+
+		/* Invert primary button */
+		.tx-hero .md-button--primary {
+			background-color: var(--md-primary-bg-color);
+			color: var(--md-primary-fg-color);
+			border-color: var(--md-primary-bg-color);
+		}
+
+		/* Invert hover and focus button states */
+		.tx-hero .md-button:hover,
+		.tx-hero .md-button:focus {
+			background-color: var(--md-primary-fg-color);
+			color: var(--md-default-bg-color);
+			border-color: var(--md-primary-fg-color);
+		}
+
+		/* [mobile portrait -]: Adjust headline */
+		@media screen and (max-width: 30em) {
+
+			/* Make main headline smaller */
+			.tx-hero h1 {
+				font-size: 1.4rem;
+			}
+		}
+
+		/* [tablet landscape +]: Display content and image next to each other */
+		@media screen and (min-width: 60em) {
+
+			/* Hide table of contents */
+			.md-sidebar--secondary {
+				display: none;
+			}
+
+			/* Use flex layout to align items */
+			.tx-hero {
+				display: flex;
+				align-items: stretch;
+			}
+
+			/* Increase bottom spacing and set dimensions */
+			.tx-hero__content {
+				max-width: 19rem;
+				margin-top: 3.5rem;
+				padding-bottom: 14vw;
+			}
+
+			/* Swap with teaser and set dimensions */
+			.tx-hero__image {
+				width: 38rem;
+				order: 1;
+				transform: translateX(4rem);
+			}
+		}
+
+		/* [screen +]: Adjust spacing */
+		@media screen and (min-width: 76.25em) {
+
+			/* Hide navigation */
+			.md-sidebar--primary {
+				display: none;
+			}
+
+			/* Ensure the image aligns with the repository information */
+			.tx-hero__image {
+				transform: translateX(8rem);
+			}
+		}
+	</style>
+
+	<!-- Hero for landing page -->
+	<section class="tx-container">
+		<div class="md-grid md-typeset">
+			<div class="tx-hero">
+
+				<!-- Hero image -->
+				<div class="tx-hero__image">
+					<img
+						class="hero-image"
+						src="images/overview.jpeg"
+						alt="FruitNanny with web UI"
+						draggable="false"
+					>
+				</div>
+
+				<!-- Hero content -->
+				<div class="tx-hero__content">
+					
+					<h1>Completely over-engineered DIY NoIR baby monitor</h1>
+					
+					<p>
+						Made with
+						<span class="twemoji">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35z"></path></svg>
+						</span>
+						and open source. Kudos to <a href="https://github.com/ivadim/fruitnanny">Dmitry Ivanov</a>
+						who had the <a href="https://ivadim.github.io/2017-08-21-fruitnanny/">original project idea</a>.
+					</p>
+					<a
+						href="user/getting-started/"
+						title="Getting Started"
+						class="md-button md-button--primary"
+					>
+						User Guide
+					</a>
+					<a
+						href="crafting/"
+						class="md-button"
+					>
+						Crafting Guide
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
@@ -196,17 +453,17 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
-      User
+      User Guide
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
-    <nav class="md-nav" aria-label="User" data-md-level="1">
+    <nav class="md-nav" aria-label="User Guide" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
-        User
+        User Guide
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -217,8 +474,8 @@
 
 
   <li class="md-nav__item">
-    <a href="user/getting-started/" title="Getting started" class="md-nav__link">
-      Getting started
+    <a href="user/getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
     </a>
   </li>
 
@@ -233,22 +490,52 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Crafting Guide
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Crafting Guide" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Crafting Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
     <a href="crafting/" title="Crafting" class="md-nav__link">
       Crafting
     </a>
   </li>
 
-    
-      
-      
-      
+        
+          
+          
+          
 
 
   <li class="md-nav__item">
     <a href="setup/" title="Rasberry Pi Setup" class="md-nav__link">
       Rasberry Pi Setup
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -259,20 +546,20 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
-    <label class="md-nav__link" for="nav-5">
-      Development
+    <label class="md-nav__link" for="nav-4">
+      Development Guide
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
-    <nav class="md-nav" aria-label="Development" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+    <nav class="md-nav" aria-label="Development Guide" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
-        Development
+        Development Guide
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -317,35 +604,6 @@
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-                
-                  <a href="https://github.com/fruitnanny/fruitnanny.github.io/edit/source/docs/index.md" title="Edit this page" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
-                  </a>
-                
-                
-                  
-                
-                
-                  <h1>Home</h1>
-                
-                <p>FruitNanny is a completely over-engineered do-it-yourself (DIY) open source NoIR baby monitor based on a
-<a href="https://www.raspberrypi.org/">Raspberry Pi</a>. Kudos to <a href="https://github.com/ivadim/fruitnanny">Dmitry Ivanov</a>
-who had the <a href="https://ivadim.github.io/2017-08-21-fruitnanny/">original project idea</a>.</p>
-                
-                  
-                    
-
-<hr>
-<div class="md-source-date">
-  <small>
-    
-      Last update: May 21, 2020
-    
-  </small>
-</div>
-                  
-                
-              
               
                 
 
@@ -356,44 +614,18 @@ who had the <a href="https://ivadim.github.io/2017-08-21-fruitnanny/">original p
         </div>
       </main>
       
-        
-<footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-        
-          <a href="user/getting-started/" title="Getting started" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Getting started
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-      </div>
-      
-    </div>
-  </div>
-</footer>
-      
+	<footer class="md-footer">
+		<div class="md-footer-meta md-typeset">
+			<div class="md-footer-meta__inner md-grid">
+				<div class="md-footer-copyright">
+					<div class="md-footer-copyright__highlight">
+						Copyright © 2020 Lucas Kahlert
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
     </div>
     
       <script src="assets/javascripts/vendor.a0c4167b.min.js"></script>
@@ -402,7 +634,7 @@ who had the <a href="https://ivadim.github.io/2017-08-21-fruitnanny/">original p
       <script>
         app = initialize({
           base: ".",
-          features: [],
+          features: ["tabs"],
           search: Object.assign({
             worker: "assets/javascripts/worker/search.37585f48.min.js"
           }, typeof search !== "undefined" && search)
