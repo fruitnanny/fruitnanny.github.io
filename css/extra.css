@@ -22,3 +22,8 @@ img.float-right {
 	float: right;
 	margin-left: 1rem;
 }
+
+svg.icon-image {
+	max-width: 10rem;
+	display: block;
+}

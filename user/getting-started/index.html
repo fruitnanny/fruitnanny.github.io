@@ -366,31 +366,34 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#connect-to-home-wlan" class="md-nav__link">
-    Connect to Home WLAN
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installing-updates" class="md-nav__link">
-    Installing Updates
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-ip-addresses" class="md-nav__link">
-    Using IP Addresses
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../network/" title="Network Configuration" class="md-nav__link">
+      Network Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../updates/" title="Software Updates" class="md-nav__link">
+      Software Updates
+    </a>
   </li>
 
         
@@ -578,27 +581,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#connect-to-home-wlan" class="md-nav__link">
-    Connect to Home WLAN
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installing-updates" class="md-nav__link">
-    Installing Updates
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-ip-addresses" class="md-nav__link">
-    Using IP Addresses
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -657,7 +639,7 @@ listed here, these are the required technologies:</p>
 <tr>
 <td>Android</td>
 <td>Firefox Preview</td>
-<td>mDNS does not work on Android. Use IP address instead, see <a href="#using-ip-addresses">this section</a>.</td>
+<td>mDNS does not work on Android. Use IP address instead, see <a href="../network/#using-ip-addresses">this section</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -689,50 +671,6 @@ turn on the infrared light.</p>
 <p><img alt="FruitNanny Web UI" src="../../images/poweroff.jpeg"></p>
 <p>Of course, you could also just unplug the FruitNanny but this should be
 avoided in order to properly shut down the operating system.</p>
-<h2 id="connect-to-home-wlan">Connect to Home WLAN<a class="headerlink" href="#connect-to-home-wlan" title="Permanent link">&para;</a></h2>
-<p>The accessing device only needs to be in the same local network as the
-FruitNanny in order to use the web UI. This meas if the FruitNanny is later
-connected to the local home WLAN, the web UI can accessed from any device in
-the home network.</p>
-<ol>
-<li>Select <em>Network</em> via the app main menu in the top left corner.</li>
-<li>Go to the <em>WLAN</em> tab and select the network of choice.</li>
-<li>You will be prompted for the password.</li>
-<li>Connect your device to the <strong>same WLAN</strong> and go back to your browser within
-   <strong>60 seconds</strong>. Wait for the connection to be established.</li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>FruitNanny implements a safety mechanism to avoid you locking yourself out of
-your FruitNanny when changing network settings. A checkpoint is created
-before any change in network configuration is performed. This checkpoint will
-automatically rollback any change after 60 seconds. This means, if you have
-messed up the your configuration, do not worry, your FruitNanny will be back
-after one minute.</p>
-<p>The web UI will try to clear the checkpoint. This is only successful if your
-device is able to connect to the FruitNanny after the network settings were
-changed.</p>
-</div>
-<h2 id="installing-updates">Installing Updates<a class="headerlink" href="#installing-updates" title="Permanent link">&para;</a></h2>
-<p>If the FruitNanny has connection the Internet, it can check and install
-updates via the web UI.</p>
-<p>You can check for updates:</p>
-<ol>
-<li>Go to <em>Settings</em> via app main menu in the top left corner</li>
-<li>Go to the <em>System</em> tab</li>
-<li>Hit <em>Check for Updates</em> button.</li>
-</ol>
-<p>If updates are available, you will see a download icon in the top right
-corner.</p>
-<p><img alt="Updates available" src="../../images/updates.jpeg" style="max-width: 300px;"></p>
-<p>Clicking on this icon will install available updates for all
-FruitNanny-related system packages.</p>
-<h2 id="using-ip-addresses">Using IP Addresses<a class="headerlink" href="#using-ip-addresses" title="Permanent link">&para;</a></h2>
-<div class="admonition todo">
-<p class="admonition-title">Todo</p>
-<p>This section will describe how to use the FruitNanny in case mDNS is not
-available.</p>
-</div>
                 
                   
                     
@@ -779,13 +717,13 @@ available.</p>
           </a>
         
         
-          <a href="../../crafting/" title="Crafting" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../network/" title="Network Configuration" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Crafting
+                Network Configuration
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
