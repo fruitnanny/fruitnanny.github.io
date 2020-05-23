@@ -63,6 +63,9 @@ turn on the infrared light.
 
 Only **one device** can use the live stream at the same time.
 
+If you want to connect the FruitNanny to your home network instead of using
+the hotspot, please check the [network configuration section](../network/#connect-to-home-wlan).
+
 
 ### 4. Powering Off
 
