@@ -1,0 +1,210 @@
+{% extends "main.html" %}
+
+<!-- Render hero under tabs -->
+{% block tabs %}
+	{{ super() }}
+
+	<!-- Additional styles for landing page -->
+	<style>
+		:root {
+			--secondary-color: #46d954;
+		}
+
+		/* Application header should be static for the landing page */
+		.md-header {
+			position: initial;
+		}
+
+		/* Remove spacing, as we cannot hide it completely */
+		.md-main__inner {
+			margin: 0;
+		}
+
+		/* Hide main content for now */
+		.md-content {
+			display: none;
+		}
+
+		/* Gradient background + blob */
+		.tx-container {
+			padding-top: 1rem;
+			background:
+				url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M 1124,0 V 258 H 0 V 80 c 0,0 82,59 250,59 C 530,140 723,2 1124,2 Z' style='fill: white' /></svg>") no-repeat bottom,
+				linear-gradient(
+					to bottom,
+					var(--md-primary-fg-color),
+					var(--secondary-color) 99%,
+					white 99%
+				);
+		}
+
+		/* Hero image */
+		.hero-image {
+			border-radius: 1rem;
+			margin-bottom: 1rem;
+		}
+
+		/* Set inverted text color on hero */
+		.tx-hero {
+			margin: 0 .8rem;
+			color: var(--md-primary-bg-color);
+		}
+
+		/* Make main headline thicker */
+		.tx-hero h1 {
+			margin-bottom: 1rem;
+			color: currentColor;
+			font-weight: 700;
+		}
+
+		/* Ensure that blob doesn't overlap buttons */
+		.tx-hero__content {
+			padding-bottom: 6rem;
+		}
+
+		/* Use typography instead of color to emphasize links */
+		.tx-hero__content a,
+		.tx-hero__content a:hover {
+			color: white;
+			border-bottom: 1px dotted;
+		}
+
+		/* Adjust spacing of buttons and invert them */
+		.tx-hero .md-button {
+			margin-top: .5rem;
+			margin-right: .5rem;
+			color: var(--md-primary-bg-color);
+		}
+
+		/* Invert primary button */
+		.tx-hero .md-button--primary {
+			background-color: var(--md-primary-bg-color);
+			color: var(--md-primary-fg-color);
+			border-color: var(--md-primary-bg-color);
+		}
+
+		/* Invert hover and focus button states */
+		.tx-hero .md-button:hover,
+		.tx-hero .md-button:focus {
+			background-color: var(--md-primary-fg-color);
+			color: var(--md-default-bg-color);
+			border-color: var(--md-primary-fg-color);
+		}
+
+		/* [mobile portrait -]: Adjust headline */
+		@media screen and (max-width: 30em) {
+
+			/* Make main headline smaller */
+			.tx-hero h1 {
+				font-size: 1.4rem;
+			}
+		}
+
+		/* [tablet landscape +]: Display content and image next to each other */
+		@media screen and (min-width: 60em) {
+
+			/* Hide table of contents */
+			.md-sidebar--secondary {
+				display: none;
+			}
+
+			/* Use flex layout to align items */
+			.tx-hero {
+				display: flex;
+				align-items: stretch;
+			}
+
+			/* Increase bottom spacing and set dimensions */
+			.tx-hero__content {
+				max-width: 19rem;
+				margin-top: 3.5rem;
+				padding-bottom: 14vw;
+			}
+
+			/* Swap with teaser and set dimensions */
+			.tx-hero__image {
+				width: 38rem;
+				order: 1;
+				transform: translateX(4rem);
+			}
+		}
+
+		/* [screen +]: Adjust spacing */
+		@media screen and (min-width: 76.25em) {
+
+			/* Hide navigation */
+			.md-sidebar--primary {
+				display: none;
+			}
+
+			/* Ensure the image aligns with the repository information */
+			.tx-hero__image {
+				transform: translateX(8rem);
+			}
+		}
+	</style>
+
+	<!-- Hero for landing page -->
+	<section class="tx-container">
+		<div class="md-grid md-typeset">
+			<div class="tx-hero">
+
+				<!-- Hero image -->
+				<div class="tx-hero__image">
+					<img
+						class="hero-image"
+						src="images/overview.jpeg"
+						alt="FruitNanny with web UI"
+						draggable="false"
+					>
+				</div>
+
+				<!-- Hero content -->
+				<div class="tx-hero__content">
+					{# <h1>Technical documentation that just works</h1> #}
+					<h1>Completely over-engineered DIY NoIR baby monitor</h1>
+					{# <p>{{ config.site_description }}. Set up in 5 minutes.</p> #}
+					<p>
+						Made with
+						<span class="twemoji">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35z"></path></svg>
+						</span>
+						and open source. Kudos to <a href="https://github.com/ivadim/fruitnanny">Dmitry Ivanov</a>
+						who had the <a href="https://ivadim.github.io/2017-08-21-fruitnanny/">original project idea</a>.
+					</p>
+					<a
+						href="{{ page.next_page.url | url }}"
+						title="{{ page.next_page.title | striptags }}"
+						class="md-button md-button--primary"
+					>
+						User Guide
+					</a>
+					<a
+						href="crafting/"
+						class="md-button"
+					>
+						Crafting Guide
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+
+<!-- Content -->
+{% block content %}{% endblock %}
+
+<!-- Application footer -->
+{% block footer %}
+	<footer class="md-footer">
+		<div class="md-footer-meta md-typeset">
+			<div class="md-footer-meta__inner md-grid">
+				<div class="md-footer-copyright">
+					<div class="md-footer-copyright__highlight">
+						Copyright © 2020 Lucas Kahlert
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+{% endblock %}

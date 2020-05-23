@@ -3,20 +3,28 @@ site_url: https://fruitnanny.github.io/
 repo_name: GitHub
 repo_url: https://github.com/fruitnanny/fruitnanny.github.io/
 edit_uri: edit/source/docs
+copyright: Copyright © 2020 Lucas Kahlert  # Also change in "home.html"
 nav:
   - index.md
-  - User:
+  - User Guide:
      - user/getting-started.md
-  - crafting.md
-  - setup.md
-  - Development:
+  - Crafting Guide:
+     - crafting.md
+     - setup.md
+  - Development Guide:
     - development/api.md
     - development/ui.md
 theme:
   name: material
   favicon: images/favicon.png
+  custom_dir: overrides
   icon:
     logo: material/camera-iris
+  features:
+    - tabs
+  palette:
+    primary: blue
+    accent: pink
 plugins:
   - git-revision-date-localized
   - search
