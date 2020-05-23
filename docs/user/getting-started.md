@@ -25,7 +25,7 @@ Platform | Browser | Notes
 -------- | ------- | ------
 Ubuntu   | Firefox, Chromium | [Avahi](https://www.avahi.org/) for mDNS support.
 iOS      | Safari  |
-Android  | Firefox Preview | mDNS does not work on Android. Use IP address instead, see [this section](#using-ip-addresses).
+Android  | Firefox Preview | mDNS does not work on Android. Use IP address instead, see [this section](../network/#using-ip-addresses).
 
 
 ## First Steps
@@ -73,61 +73,6 @@ The FruitNanny can be turned off via the main menu in the top left corner.
 
 Of course, you could also just unplug the FruitNanny but this should be
 avoided in order to properly shut down the operating system.
-
-
-## Connect to Home WLAN
-
-The accessing device only needs to be in the same local network as the
-FruitNanny in order to use the web UI. This meas if the FruitNanny is later
-connected to the local home WLAN, the web UI can accessed from any device in
-the home network.
-
-1. Select *Network* via the app main menu in the top left corner.
-2. Go to the *WLAN* tab and select the network of choice.
-3. You will be prompted for the password.
-4. Connect your device to the **same WLAN** and go back to your browser within
-   **60 seconds**. Wait for the connection to be established.
-
-!!! note
-	FruitNanny implements a safety mechanism to avoid you locking yourself out of
-	your FruitNanny when changing network settings. A checkpoint is created
-	before any change in network configuration is performed. This checkpoint will
-	automatically rollback any change after 60 seconds. This means, if you have
-	messed up the your configuration, do not worry, your FruitNanny will be back
-	after one minute.
-
-	The web UI will try to clear the checkpoint. This is only successful if your
-	device is able to connect to the FruitNanny after the network settings were
-	changed.
-
-
-## Installing Updates
-
-If the FruitNanny has connection the Internet, it can check and install
-updates via the web UI.
-
-You can check for updates:
-
-1. Go to *Settings* via app main menu in the top left corner
-2. Go to the *System* tab
-3. Hit *Check for Updates* button.
-
-If updates are available, you will see a download icon in the top right
-corner.
-
-<img alt="Updates available" src="../../images/updates.jpeg" style="max-width: 300px;">
-
-Clicking on this icon will install available updates for all
-FruitNanny-related system packages.
-
-
-
-## Using IP Addresses
-
-!!! todo
-	This section will describe how to use the FruitNanny in case mDNS is not
-	available.
-
 
 [mdns]: https://en.wikipedia.org/wiki/Multicast_DNS
 [webrtc]: https://webrtc.org/

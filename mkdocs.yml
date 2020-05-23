@@ -8,6 +8,8 @@ nav:
   - index.md
   - User Guide:
      - user/getting-started.md
+     - user/network.md
+     - user/updates.md
   - Crafting Guide:
      - crafting.md
      - setup.md
