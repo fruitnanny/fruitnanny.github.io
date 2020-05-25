@@ -61,7 +61,9 @@ Once you are connected to the hotspot, the web UI can be accessed via
 Hit the *Play* button and you should get a live video. If it is dark, just
 turn on the infrared light.
 
-Only **one device** can use the live stream at the same time.
+Only **one device** can use the live stream at the same time. See
+[this issue](https://github.com/kclyu/rpi-webrtc-streamer/issues/12) for
+explanation.
 
 If you want to connect the FruitNanny to your home network instead of using
 the hotspot, please check the [network configuration section](../network/#connect-to-home-wlan).
