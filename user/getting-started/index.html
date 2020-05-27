@@ -615,34 +615,97 @@ and environmental sensor. It is accessed by a web UI via WiFi at
 listed here, these are the required technologies:</p>
 <ol>
 <li><a href="https://en.wikipedia.org/wiki/Multicast_DNS">mDNS</a> support in order to resolve <code>*.local</code> domains in a local network</li>
-<li>Browser with <a href="https://webrtc.org/">WebRTC</a> support for live video streaming</li>
+<li>Browser with <a href="https://webrtc.org/">WebRTC</a> and <a href="https://en.wikipedia.org/wiki/Advanced_Video_Coding">H.264</a>
+   codec support for live video streaming.</li>
 </ol>
 <table>
-<thead>
-<tr>
-<th>Platform</th>
-<th>Browser</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Ubuntu</td>
-<td>Firefox, Chromium</td>
-<td><a href="https://www.avahi.org/">Avahi</a> for mDNS support.</td>
-</tr>
-<tr>
-<td>iOS</td>
-<td>Safari</td>
-<td></td>
-</tr>
-<tr>
-<td>Android</td>
-<td>Firefox Preview</td>
-<td>mDNS does not work on Android. Use IP address instead, see <a href="../network/#using-ip-addresses">this section</a>.</td>
-</tr>
-</tbody>
+    <thead>
+        <tr>
+            <th align="center">Supported</th>
+            <th>Platform</th>
+            <th>Browser</th>
+            <th>Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="supported" align="center">✓</td>
+            <td>Ubuntu</td>
+            <td>Firefox, Chromium</td>
+            <td><a href="https://www.avahi.org/">Avahi</a> for mDNS support.</td>
+        </tr>
+        <tr>
+            <td class="supported" align="center">✓</td>
+            <td>iOS</td>
+            <td>Safari</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="supported" align="center">✓</td>
+            <td>Android</td>
+            <td>Firefox Preview</td>
+            <td>
+                mDNS does not work on Android. Use IP address instead, see
+                <a href="../network/#using-ip-addresses">this section</a>.
+            </td>
+        </tr>
+        <tr>
+            <td class="not-supported" align="center">✗</td>
+            <td>Android</td>
+            <td>Firefox</td>
+            <td>
+                Since version 68 Firefox for Android
+                <a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/WebRTC_codecs#Supported_video_codecs">no longer supports H.264</a>
+                due to a <a href="https://support.mozilla.org/en-US/kb/firefox-android-openh264">change in Google Play policy</a>.
+            </td>
+        </tr>
+        <tr>
+            <td class="partially-supported" align="center">(?)</td>
+            <td>Android</td>
+            <td>Chrome</td>
+            <td>
+                On Android WebRTC, H.264 is supported only if:
+                <ol>
+                    <li>
+                        device hardware supports it <strong>and</strong>
+                    </li>
+                    <li>
+                        WebRTC hardware encoder glue logic supports that
+                        hardware encoder.
+                    </li>
+                    <p>
+                        Currently only <em>Qualcomm</em> and <em>Exynos</em>
+                        devices are supported. Any other devices – even if they
+                        support H.264 hardware encoder – will not be used and
+                        will not be available for WebRTC streams.
+                    </p>
+                    <p>
+                        See <a href="https://groups.google.com/forum/#!msg/discuss-webrtc/xXjeKbW_JYI/LIXzVrKWCwAJ">here</a>
+                        for more information.
+                    </p>
+            </td>
+        </tr>
+        <tr>
+            <td class="supported" align="center">✓</td>
+            <td>Windows</td>
+            <td>Chrome</td>
+            <td>
+                Chrome has <a href="https://developer.chrome.com/apps/mdns">built-in support</a>
+                for mDNS.
+            </td>
+        </tr>
+        <tr>
+            <td class="not-supported" align="center">✗</td>
+            <td>Windows</td>
+            <td>Firefox</td>
+            <td>
+                Currently, Firefox does <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1239909">not support</a>
+                the new mDNS API of in Windows 10.
+            </td>
+        </tr>
+    </tbody>
 </table>
+
 <h2 id="first-steps">First Steps<a class="headerlink" href="#first-steps" title="Permanent link">&para;</a></h2>
 <h3 id="1-power">1. Power<a class="headerlink" href="#1-power" title="Permanent link">&para;</a></h3>
 <p>Connect the FruitNanny to a <em>5V microUSB power source</em>. A powerbank should
@@ -665,7 +728,9 @@ properly on Android. Please consult the <a href="#support-matrix">support matrix
 </div>
 <p>Hit the <em>Play</em> button and you should get a live video. If it is dark, just
 turn on the infrared light.</p>
-<p>Only <strong>one device</strong> can use the live stream at the same time.</p>
+<p>Only <strong>one device</strong> can use the live stream at the same time. See
+<a href="https://github.com/kclyu/rpi-webrtc-streamer/issues/12">this issue</a> for
+explanation.</p>
 <p>If you want to connect the FruitNanny to your home network instead of using
 the hotspot, please check the <a href="../network/#connect-to-home-wlan">network configuration section</a>.</p>
 <h3 id="4-powering-off">4. Powering Off<a class="headerlink" href="#4-powering-off" title="Permanent link">&para;</a></h3>
@@ -681,7 +746,7 @@ avoided in order to properly shut down the operating system.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: May 23, 2020
+      Last update: May 27, 2020
     
   </small>
 </div>

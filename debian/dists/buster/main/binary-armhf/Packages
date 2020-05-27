@@ -1,17 +1,17 @@
 Package: fruitnanny-api
-Version: 20.05.7
+Version: 20.05.8
 Architecture: armhf
 Maintainer: Lucas Kahlert <lucas.kahlert@square-src.de>
-Installed-Size: 9136
+Installed-Size: 9137
 Depends: sysuser-helper (<< 1.4), avahi-daemon, fruitnanny-ui, python3
 Homepage: https://github.com/f3anaro/fruitnanny-api
 Priority: optional
 Section: web
-Filename: pool/main/f/fruitnanny-api/fruitnanny-api_20.05.7_armhf.deb
-Size: 2873960
-SHA256: 9bc11f624ac683f82995afa2957ba526189f408b2e02958bfe16c876ba4ab50c
-SHA1: 43fa5c4cc8379a25c54f3b8625d6a79e5ec67dc8
-MD5sum: 7ebce1597430cccd2b4cc772b3e1b8ba
+Filename: pool/main/f/fruitnanny-api/fruitnanny-api_20.05.8_armhf.deb
+Size: 2874300
+SHA256: 38e9781d3780ddfb7f23a59a1fe37fa0a06deda8238009f843989187eccd7ea5
+SHA1: 93f88d41d7fcdecf501e0d89f0fe4818561eccaf
+MD5sum: f3d5121cd50e9ab4e2dc278181437879
 Description: FruitNanny API
 
 Package: fruitnanny-ui
