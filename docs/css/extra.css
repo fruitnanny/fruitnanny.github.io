@@ -27,3 +27,15 @@ svg.icon-image {
 	max-width: 10rem;
 	display: block;
 }
+
+td.supported {
+	color: #8BC34A;
+}
+
+td.partially-supported {
+	color: #FFC107;
+}
+
+td.not-supported {
+	color: #E91E63;
+}

@@ -19,14 +19,96 @@ This is a list of platforms and browsers known to work. If your system is not
 listed here, these are the required technologies:
 
 1. [mDNS][mdns] support in order to resolve `*.local` domains in a local network
-2. Browser with [WebRTC][webrtc] support for live video streaming
+2. Browser with [WebRTC][webrtc] and [H.264](https://en.wikipedia.org/wiki/Advanced_Video_Coding)
+   codec support for live video streaming.
 
-Platform | Browser | Notes
--------- | ------- | ------
-Ubuntu   | Firefox, Chromium | [Avahi](https://www.avahi.org/) for mDNS support.
-iOS      | Safari  |
-Android  | Firefox Preview | mDNS does not work on Android. Use IP address instead, see [this section](../network/#using-ip-addresses).
-
+<table>
+	<thead>
+		<tr>
+			<th align="center">Supported</th>
+			<th>Platform</th>
+			<th>Browser</th>
+			<th>Notes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="supported" align="center">✓</td>
+			<td>Ubuntu</td>
+			<td>Firefox, Chromium</td>
+			<td><a href="https://www.avahi.org/">Avahi</a> for mDNS support.</td>
+		</tr>
+		<tr>
+			<td class="supported" align="center">✓</td>
+			<td>iOS</td>
+			<td>Safari</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="supported" align="center">✓</td>
+			<td>Android</td>
+			<td>Firefox Preview</td>
+			<td>
+				mDNS does not work on Android. Use IP address instead, see
+				<a href="../network/#using-ip-addresses">this section</a>.
+			</td>
+		</tr>
+		<tr>
+			<td class="not-supported" align="center">✗</td>
+			<td>Android</td>
+			<td>Firefox</td>
+			<td>
+				Since version 68 Firefox for Android
+				<a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/WebRTC_codecs#Supported_video_codecs">no longer supports H.264</a>
+				due to a <a href="https://support.mozilla.org/en-US/kb/firefox-android-openh264">change in Google Play policy</a>.
+			</td>
+		</tr>
+		<tr>
+			<td class="partially-supported" align="center">(?)</td>
+			<td>Android</td>
+			<td>Chrome</td>
+			<td>
+				On Android WebRTC, H.264 is supported only if:
+				<ol>
+					<li>
+    					device hardware supports it <strong>and</strong>
+					</li>
+					<li>
+    					WebRTC hardware encoder glue logic supports that
+    					hardware encoder.
+					</li>
+					<p>
+						Currently only <em>Qualcomm</em> and <em>Exynos</em>
+						devices are supported. Any other devices – even if they
+						support H.264 hardware encoder – will not be used and
+						will not be available for WebRTC streams.
+					</p>
+					<p>
+						See <a href="https://groups.google.com/forum/#!msg/discuss-webrtc/xXjeKbW_JYI/LIXzVrKWCwAJ">here</a>
+						for more information.
+					</p>
+			</td>
+		</tr>
+		<tr>
+			<td class="supported" align="center">✓</td>
+			<td>Windows</td>
+			<td>Chrome</td>
+			<td>
+				Chrome has <a href="https://developer.chrome.com/apps/mdns">built-in support</a>
+				for mDNS.
+			</td>
+		</tr>
+		<tr>
+			<td class="not-supported" align="center">✗</td>
+			<td>Windows</td>
+			<td>Firefox</td>
+			<td>
+				Currently, Firefox does <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1239909">not support</a>
+				the new mDNS API of in Windows 10.
+			</td>
+		</tr>
+	</tbody>
+</table>
 
 ## First Steps
 
