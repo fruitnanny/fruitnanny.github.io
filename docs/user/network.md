@@ -32,8 +32,34 @@ the home network.
 	changed.
 
 
+## SSH Access <small>– :material-atom: Advanced</small>
+
+The FruitNanny can be access via SSH with the standard Raspberry Pi method as
+user `pi`. It is recommended to use *public key authentication* instead of
+passwords.
+
+User `pi` has password-less `sudo` access. It is important to **run no
+service** as user `pi`.
+
+```bash
+# Connect to FruitNanny
+ssh pi@fruitnanny.local
+```
+
+
 ## Using IP Addresses
 
-!!! todo
-	This section will describe how to use the FruitNanny in case mDNS is not
-	available.
+If for some reason mDNS does not work in your network or on your device which
+means your device is not able to resolve `fruitnanny.local`, this section
+describes how to use IP address to connect to the FruitNanny.
+
+Most of the time, your network router will assign an dynamic IP address to the
+FruitNanny. This means, the address can change over time. The dynamic address
+can be determined via DNS service discovery (DNS-SD). This is a list example
+apps for different mobile platforms:
+
+ - Android: [Service Browser](https://play.google.com/store/apps/details?id=com.druk.servicebrowser)
+ - iOS: [Discovery - DNS-SD Browser](https://apps.apple.com/us/app/discovery-dns-sd-browser/id305441017)
+
+Browse the *.local* domain for *_http._tcp* services. The FruitNanny should be
+available as *FruitNanny Web UI*.
