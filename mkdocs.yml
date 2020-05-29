@@ -35,6 +35,7 @@ plugins:
 markdown_extensions:
   - admonition
   - codehilite
+  - def_list
   - footnotes
   - meta
   - pymdownx.emoji:
