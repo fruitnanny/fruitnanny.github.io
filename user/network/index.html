@@ -197,7 +197,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../development/api/" class="md-tabs__link">
+        <a href="../../development/architecture/" class="md-tabs__link">
           Development Guide
         </a>
       
@@ -338,6 +338,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ssh-access-advanced" class="md-nav__link">
+    SSH Access –  Advanced
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#using-ip-addresses" class="md-nav__link">
     Using IP Addresses
   </a>
@@ -453,6 +460,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../development/architecture/" title="Architecture" class="md-nav__link">
+      Architecture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../development/api/" title="API" class="md-nav__link">
       API
     </a>
@@ -502,6 +521,13 @@
         <li class="md-nav__item">
   <a href="#connect-to-home-wlan" class="md-nav__link">
     Connect to Home WLAN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-access-advanced" class="md-nav__link">
+    SSH Access –  Advanced
   </a>
   
 </li>
@@ -561,12 +587,30 @@ after one minute.</p>
 device is able to connect to the FruitNanny after the network settings were
 changed.</p>
 </div>
+<h2 id="ssh-access-advanced">SSH Access <small>– <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 11a1 1 0 011 1 1 1 0 01-1 1 1 1 0 01-1-1 1 1 0 011-1M4.22 4.22C5.65 2.79 8.75 3.43 12 5.56c3.25-2.13 6.35-2.77 7.78-1.34 1.43 1.43.79 4.53-1.34 7.78 2.13 3.25 2.77 6.35 1.34 7.78-1.43 1.43-4.53.79-7.78-1.34-3.25 2.13-6.35 2.77-7.78 1.34-1.43-1.43-.79-4.53 1.34-7.78-2.13-3.25-2.77-6.35-1.34-7.78m11.32 4.24c.61.62 1.17 1.25 1.69 1.88 1.38-2.13 1.88-3.96 1.13-4.7-.74-.75-2.57-.25-4.7 1.13.63.52 1.26 1.08 1.88 1.69m-7.08 7.08c-.61-.62-1.17-1.25-1.69-1.88-1.38 2.13-1.88 3.96-1.13 4.7.74.75 2.57.25 4.7-1.13-.63-.52-1.26-1.08-1.88-1.69m-2.82-9.9c-.75.74-.25 2.57 1.13 4.7.52-.63 1.08-1.26 1.69-1.88.62-.61 1.25-1.17 1.88-1.69-2.13-1.38-3.96-1.88-4.7-1.13m4.24 8.48c.7.7 1.42 1.34 2.12 1.91.7-.57 1.42-1.21 2.12-1.91.7-.7 1.34-1.42 1.91-2.12-.57-.7-1.21-1.42-1.91-2.12-.7-.7-1.42-1.34-2.12-1.91-.7.57-1.42 1.21-2.12 1.91-.7.7-1.34 1.42-1.91 2.12.57.7 1.21 1.42 1.91 2.12m8.48 4.24c.75-.74.25-2.57-1.13-4.7-.52.63-1.08 1.26-1.69 1.88-.62.61-1.25 1.17-1.88 1.69 2.13 1.38 3.96 1.88 4.7 1.13z"/></svg></span> Advanced</small><a class="headerlink" href="#ssh-access-advanced" title="Permanent link">&para;</a></h2>
+<p>The FruitNanny can be access via SSH with the standard Raspberry Pi method as
+user <code>pi</code>. It is recommended to use <em>public key authentication</em> instead of
+passwords.</p>
+<p>User <code>pi</code> has password-less <code>sudo</code> access. It is important to <strong>run no
+service</strong> as user <code>pi</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Connect to FruitNanny</span>
+ssh pi@fruitnanny.local
+</code></pre></div>
+
 <h2 id="using-ip-addresses">Using IP Addresses<a class="headerlink" href="#using-ip-addresses" title="Permanent link">&para;</a></h2>
-<div class="admonition todo">
-<p class="admonition-title">Todo</p>
-<p>This section will describe how to use the FruitNanny in case mDNS is not
-available.</p>
-</div>
+<p>If for some reason mDNS does not work in your network or on your device which
+means your device is not able to resolve <code>fruitnanny.local</code>, this section
+describes how to use IP address to connect to the FruitNanny.</p>
+<p>Most of the time, your network router will assign an dynamic IP address to the
+FruitNanny. This means, the address can change over time. The dynamic address
+can be determined via DNS service discovery (DNS-SD). This is a list example
+apps for different mobile platforms:</p>
+<ul>
+<li>Android: <a href="https://play.google.com/store/apps/details?id=com.druk.servicebrowser">Service Browser</a></li>
+<li>iOS: <a href="https://apps.apple.com/us/app/discovery-dns-sd-browser/id305441017">Discovery - DNS-SD Browser</a></li>
+</ul>
+<p>Browse the <em>.local</em> domain for <em>_http._tcp</em> services. The FruitNanny should be
+available as <em>FruitNanny Web UI</em>.</p>
                 
                   
                     
@@ -575,7 +619,7 @@ available.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: May 23, 2020
+      Last update: May 29, 2020
     
   </small>
 </div>

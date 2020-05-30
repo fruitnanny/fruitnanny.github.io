@@ -197,7 +197,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../development/api/" class="md-tabs__link">
+        <a href="../development/architecture/" class="md-tabs__link">
           Development Guide
         </a>
       
@@ -555,6 +555,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../development/architecture/" title="Architecture" class="md-nav__link">
+      Architecture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../development/api/" title="API" class="md-nav__link">
       API
     </a>
@@ -743,7 +755,7 @@ here is a <a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b-p
 <h2 id="flash-the-raspbian">Flash the Raspbian<a class="headerlink" href="#flash-the-raspbian" title="Permanent link">&para;</a></h2>
 <p>We use <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspban Buster Lite</a>
 as base version.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Download latest zipped Raspbian image. This downloads a</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Download latest zipped Raspbian image. This downloads a</span>
 <span class="c1"># &quot;YYYY-MM-DD-raspbian-buster-lite.zip&quot; file.</span>
 curl -O <span class="k">$(</span>curl --head -sL -w %<span class="o">{</span>url_effective<span class="o">}</span> -o /dev/null https://downloads.raspberrypi.org/raspbian_lite_latest<span class="k">)</span>
 
@@ -760,7 +772,6 @@ unzip *-raspbian-buster-lite.zip
 rm -v *-raspbian-buster-lite.zip *-raspbian-buster-lite.zip.sha256
 </code></pre></div>
 
-
 <p>Now, insert the SD card and determine the device path. In our example this is
 <code>/dev/mmcblk0</code>.</p>
 <div class="admonition note">
@@ -773,18 +784,17 @@ e.g. <code>/dev/mmcblk0p1</code>.</p>
 <p>Double check the device path. The following operation will destroy any
 data on the output device.</p>
 </div>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Write Raspbian image to SD card</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Write Raspbian image to SD card</span>
 sudo dd <span class="k">if</span><span class="o">=</span><span class="k">$(</span>ls *-raspbian-buster-lite.img<span class="k">)</span> <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>4M <span class="nv">status</span><span class="o">=</span>progress
 
 <span class="c1"># Reload partition table of the SD card</span>
 sudo partprobe /dev/mmcblk0
 </code></pre></div>
 
-
 <h2 id="enable-ssh">Enable SSH<a class="headerlink" href="#enable-ssh" title="Permanent link">&para;</a></h2>
 <p>SSH is enabled by placing a file named <code>ssh</code> into the root directory of the
 boot partition.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Mount boot partition</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Mount boot partition</span>
 sudo mount /dev/mmcblk0p1 /mnt/
 
 <span class="c1"># Create &quot;ssh&quot; file to enable SSH server</span>
@@ -793,7 +803,6 @@ sudo touch /mnt/ssh
 <span class="c1"># Unmount boot partition again</span>
 sudo umount /mnt
 </code></pre></div>
-
 
 <p>The SD card is now ready to boot the Raspberry Pi.</p>
 <h2 id="connect-raspberry-to-host">Connect Raspberry to host<a class="headerlink" href="#connect-raspberry-to-host" title="Permanent link">&para;</a></h2>
@@ -813,7 +822,7 @@ this, the host computer needs to connect the Raspberry. There are two options:</
 interface that will be connected to the Raspberry Pi. The interfaces can be
 inspected with <code>ip addr</code>.</p>
 </div>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Create shared Ethernet connection via NetworkManager</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create shared Ethernet connection via NetworkManager</span>
 nmcli connection add <span class="se">\</span>
     con-name <span class="s2">&quot;Raspberry Pi&quot;</span> <span class="se">\</span>
     <span class="nb">type</span> ethernet <span class="se">\</span>
@@ -821,7 +830,6 @@ nmcli connection add <span class="se">\</span>
     ipv4.addresses <span class="m">10</span>.43.0.1/24 <span class="se">\</span>
     ifname eno1
 </code></pre></div>
-
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -831,15 +839,14 @@ systemd-resolve.</p>
 </div>
 <p>After figering out the connection method, insert the SD card into the
 Raspberry and boot the device.</p>
-<div class="codehilite"><pre><span></span><code>ssh pi@raspberrypi.local
+<div class="highlight"><pre><span></span><code>ssh pi@raspberrypi.local
 </code></pre></div>
-
 
 <p>The default Raspbian password is <code>raspberry</code>.</p>
 <h2 id="ssh-public-key-authentication">SSH Public Key Authentication<a class="headerlink" href="#ssh-public-key-authentication" title="Permanent link">&para;</a></h2>
 <p>The first action will be to replace the default SSH password with proper
 public key authentication. Copy your public SSH key to the Raspberry:</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Executed on the host machine. Copies the public SSH key to the Raspberry</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Executed on the host machine. Copies the public SSH key to the Raspberry</span>
 ssh-copy-id pi@raspberrypi.local
 
 <span class="c1"># Now, you can connect the the Raspberry without password</span>
@@ -849,14 +856,13 @@ ssh pi@raspberrypi.local
 sudo passwd --delete pi
 </code></pre></div>
 
-
 <p>All further setup steps are performed on the Raspberry Pi.</p>
 <h2 id="audio-device-setup">Audio Device Setup<a class="headerlink" href="#audio-device-setup" title="Permanent link">&para;</a></h2>
 <p>The Linux audio subsystem of the WebRTC native code package searches all
 available audio device. The USB microphone should be the first in this list.
 For that reason, we disable the in the device tree via device tree and
 rearrange the USB audio driver kernel driver load order.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Disable raspberry audio</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Disable raspberry audio</span>
 sudo sed -i <span class="s2">&quot;s/^dtparam=audio=on/# dtparam=audio=on # disabled for rpi-webrtc-streamer/&quot;</span> <span class="se">\</span>
     /boot/config.txt
 
@@ -865,7 +871,6 @@ sudo sed -i <span class="s2">&quot;s/^options snd-usb-audio index=-2/# options s
     /lib/modprobe.d/aliases.conf
 </code></pre></div>
 
-
 <p>The gain of the microphone is increased to be more sensitive. We can either
 use <code>alsamixer</code> (<em>F4 Capture</em>) or set the gain directly via command line:</p>
 <div class="admonition note">
@@ -873,16 +878,15 @@ use <code>alsamixer</code> (<em>F4 Capture</em>) or set the gain directly via co
 <p>23.81 dB (100%) might be too senstive. Choose the value that fits best
 your needs.</p>
 </div>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Set the gain of the USB microphone to 100%</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Set the gain of the USB microphone to 100%</span>
 sudo amixer <span class="nb">set</span> <span class="s1">&#39;Mic&#39;</span>,0 <span class="m">100</span>%
 </code></pre></div>
-
 
 <h2 id="disable-bluetooth">Disable Bluetooth<a class="headerlink" href="#disable-bluetooth" title="Permanent link">&para;</a></h2>
 <p>Currently, FruitNanny does not use Bluetooth. In order to save power, we are
 going to disable the Bluetooth chip via device tree and disable all related
 services.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Disable Bluetooth via device tree</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Disable Bluetooth via device tree</span>
 <span class="nb">echo</span> -e <span class="s2">&quot;\n# Disable Bluetooth\ndtoverlay=pi3-disable-bt\n&quot;</span> <span class="se">\</span>
     <span class="p">|</span> sudo tee -a /boot/config.txt
 
@@ -890,38 +894,34 @@ services.</p>
 sudo systemctl disable hciuart.service bluealsa.service bluetooth.service
 </code></pre></div>
 
-
 <h2 id="enable-dht11-kernel-driver">Enable DHT11 kernel driver<a class="headerlink" href="#enable-dht11-kernel-driver" title="Permanent link">&para;</a></h2>
 <p>The Linux kernel contains a in-kernel driver for DHT11/21/22 devices. It can
 be enabled via device tree.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Enable in-kernel DHT22 driver via device tree</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Enable in-kernel DHT22 driver via device tree</span>
 <span class="nb">echo</span> -e <span class="s2">&quot;\n# Enable DHT11/22 iio kernel driver\ndtoverlay=dht11,gpiopin=24\n&quot;</span> <span class="se">\</span>
     <span class="p">|</span> sudo tee -a /boot/config.txt
 </code></pre></div>
-
 
 <h2 id="optional-use-heatbeat-for-activity-led">Optional: Use heatbeat for activity LED<a class="headerlink" href="#optional-use-heatbeat-for-activity-led" title="Permanent link">&para;</a></h2>
 <p>The green activity of the Raspberry Pi can be used as heartbeat beacon. It
 will blink in a fixed period signalling that the device is still up and
 running.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Load LED heartbeat kernel module</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Load LED heartbeat kernel module</span>
 sudo modprobe ledtrig-heartbeat
 
 <span class="c1"># Enable heartbeat for activity LED</span>
 <span class="nb">echo</span> heartbeat <span class="p">|</span> sudo tee /sys/class/leds/led0/trigger
 </code></pre></div>
 
-
 <h2 id="install-networkmanager">Install NetworkManager<a class="headerlink" href="#install-networkmanager" title="Permanent link">&para;</a></h2>
 <p>FruitNanny uses <a href="https://wiki.gnome.org/Projects/NetworkManager">NetworkManager</a>
 to control the WiFi networking via its DBus interface.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Remove default Raspbian DHCP client</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Remove default Raspbian DHCP client</span>
 sudo apt-get remove dhcpcd5
 
 <span class="c1"># Install NetworkManager</span>
 sudo apt-get install network-manager
 </code></pre></div>
-
 
 <h2 id="change-hostname">Change Hostname<a class="headerlink" href="#change-hostname" title="Permanent link">&para;</a></h2>
 <p>FruitNanny web service will be available under the mDNS hostname
@@ -932,57 +932,53 @@ replaced by <code>fruitnanny</code>.</p>
 <p>If you prefer a different hostname, adjust it to your liking. The hostname
 is not hard coded in the web UI and should work out-of-the box.</p>
 </div>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Change hostname</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Change hostname</span>
 sudo hostnamectl set-hostname fruitnanny
 
 <span class="c1"># Resolve new hostname to localhost</span>
 <span class="nb">echo</span> -e <span class="s2">&quot;127.0.1.1\t</span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">\n&quot;</span> <span class="p">|</span> sudo tee -a /etc/hosts
 </code></pre></div>
 
-
 <h2 id="enable-camera">Enable Camera<a class="headerlink" href="#enable-camera" title="Permanent link">&para;</a></h2>
 <p>Use <code>raspi-config</code> to enable the camera under <em>5 Interfacing Options</em> – <em>P1 Camera</em>.</p>
-<div class="codehilite"><pre><span></span><code>sudo raspi-config
+<div class="highlight"><pre><span></span><code>sudo raspi-config
 </code></pre></div>
-
 
 <h2 id="restart-the-device">Restart the Device<a class="headerlink" href="#restart-the-device" title="Permanent link">&para;</a></h2>
 <p>Now, reboot the device for all changes to take effect. The device is available
 via the hostname <code>fruitnanny.local</code> (or what ever was chosen as new hostname).</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Reboot the device</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Reboot the device</span>
 sudo reboot
 
 <span class="c1"># Connect to the device via the new hostname</span>
 ssh pi@fruitnanny.local
 </code></pre></div>
 
-
 <p>The NetworkManager setup can be verified by running <code>nmcli</code>. You should get a
 status report similar to the following:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">eth0</span><span class="o">:</span> <span class="n">connected</span> <span class="n">to</span> <span class="n">Wired</span> <span class="n">connection</span> <span class="mi">1</span>
-        <span class="s2">&quot;Standard SMSC9512/9514&quot;</span>
-        <span class="n">ethernet</span> <span class="o">(</span><span class="n">smsc95xx</span><span class="o">),</span> <span class="n">B8</span><span class="o">:</span><span class="mi">27</span><span class="o">:</span><span class="n">EB</span><span class="o">:</span><span class="mi">1</span><span class="n">E</span><span class="o">:</span><span class="mi">44</span><span class="o">:</span><span class="mi">64</span><span class="o">,</span> <span class="n">hw</span><span class="o">,</span> <span class="n">mtu</span> <span class="mi">1500</span>
-        <span class="n">ip4</span> <span class="k">default</span>
-        <span class="n">inet4</span> <span class="mf">10.42</span><span class="o">.</span><span class="mf">0.33</span><span class="o">/</span><span class="mi">24</span>
-        <span class="n">route4</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="o">/</span><span class="mi">0</span>
-        <span class="n">route4</span> <span class="mf">10.42</span><span class="o">.</span><span class="mf">0.0</span><span class="o">/</span><span class="mi">24</span>
-        <span class="n">inet6</span> <span class="n">fe80</span><span class="o">::</span><span class="n">e425</span><span class="o">:</span><span class="mi">949</span><span class="n">f</span><span class="o">:</span><span class="n">b455</span><span class="o">:</span><span class="n">aa70</span><span class="o">/</span><span class="mi">64</span>
-        <span class="n">route6</span> <span class="n">fe80</span><span class="o">::/</span><span class="mi">64</span>
-        <span class="n">route6</span> <span class="n">ff00</span><span class="o">::/</span><span class="mi">8</span>
+<div class="highlight"><pre><span></span><code>eth0: connected to Wired connection 1
+        &quot;Standard SMSC9512/9514&quot;
+        ethernet (smsc95xx), B8:27:EB:1E:44:64, hw, mtu 1500
+        ip4 default
+        inet4 10.42.0.33/24
+        route4 0.0.0.0/0
+        route4 10.42.0.0/24
+        inet6 fe80::e425:949f:b455:aa70/64
+        route6 fe80::/64
+        route6 ff00::/8
 
-<span class="n">wlan0</span><span class="o">:</span> <span class="n">disconnected</span>
-        <span class="s2">&quot;Broadcom BCM43438 combo and Bluetooth Low Energy&quot;</span>
-        <span class="n">wifi</span> <span class="o">(</span><span class="n">brcmfmac</span><span class="o">),</span> <span class="mi">0</span><span class="n">A</span><span class="o">:</span><span class="mi">08</span><span class="o">:</span><span class="mi">60</span><span class="o">:</span><span class="n">BD</span><span class="o">:</span><span class="n">DB</span><span class="o">:</span><span class="mi">6</span><span class="n">A</span><span class="o">,</span> <span class="n">hw</span><span class="o">,</span> <span class="n">mtu</span> <span class="mi">1500</span>
+wlan0: disconnected
+        &quot;Broadcom BCM43438 combo and Bluetooth Low Energy&quot;
+        wifi (brcmfmac), 0A:08:60:BD:DB:6A, hw, mtu 1500
 
-<span class="n">lo</span><span class="o">:</span> <span class="n">unmanaged</span>
-        <span class="s2">&quot;lo&quot;</span>
-        <span class="n">loopback</span> <span class="o">(</span><span class="n">unknown</span><span class="o">),</span> <span class="mi">00</span><span class="o">:</span><span class="mi">00</span><span class="o">:</span><span class="mi">00</span><span class="o">:</span><span class="mi">00</span><span class="o">:</span><span class="mi">00</span><span class="o">:</span><span class="mi">00</span><span class="o">,</span> <span class="n">sw</span><span class="o">,</span> <span class="n">mtu</span> <span class="mi">65536</span>
+lo: unmanaged
+        &quot;lo&quot;
+        loopback (unknown), 00:00:00:00:00:00, sw, mtu 65536
 
-<span class="n">DNS</span> <span class="n">configuration</span><span class="o">:</span>
-        <span class="n">servers</span><span class="o">:</span> <span class="mf">10.42</span><span class="o">.</span><span class="mf">0.1</span>
-        <span class="kd">interface</span><span class="o">:</span> <span class="n">eth0</span>
+DNS configuration:
+        servers: 10.42.0.1
+        interface: eth0
 </code></pre></div>
-
 
 <h2 id="fruitnanny-packages">FruitNanny Packages<a class="headerlink" href="#fruitnanny-packages" title="Permanent link">&para;</a></h2>
 <p>Finally, the FruitNanny packages will be installed. They are provided as
@@ -993,7 +989,7 @@ Debian packages and hosted as Debian package repository via GitHub Pages.</p>
 It provides a version 2.9.0 of wpa-supplicant which solve connection
 problems of newer Android devices with the Raspberry Pi hotspot.</p>
 </div>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Add FruitNanny GPG key</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Add FruitNanny GPG key</span>
 curl -sL https://fruitnanny.github.io/pubkey.gpg <span class="p">|</span> sudo apt-key add -
 
 <span class="c1"># Add FruitNanny repository</span>
@@ -1006,34 +1002,30 @@ sudo apt update
 sudo apt install rws fruitnanny-ui fruitnanny-api wpasupplicant
 </code></pre></div>
 
-
 <h2 id="configure-rpi-webrtc-streamer">Configure RPi-WebRTC-Streamer<a class="headerlink" href="#configure-rpi-webrtc-streamer" title="Permanent link">&para;</a></h2>
 <p>The WebRTC streamer comes with a bundled web server for static files.
 FruitNanny has its own static file server.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Disable direct socket</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Disable direct socket</span>
 sudo sed -i <span class="s2">&quot;s/^direct_socket_enable=true/direct_socket_enable=false/&quot;</span> <span class="se">\</span>
     /opt/rws/etc/webrtc_streamer.conf
 </code></pre></div>
-
 
 <h2 id="configure-wpa-supplicant">Configure wpa-supplicant<a class="headerlink" href="#configure-wpa-supplicant" title="Permanent link">&para;</a></h2>
 <p>Ensure that <code>ap_scan</code> is set to <code>1</code> which means wpa-supplicant is responsible
 for scanning and selecting access points. This mode is required when using the
 driver <code>nl80211</code>.</p>
-<div class="codehilite"><pre><span></span><code><span class="err">ap_scan=1</span>
+<div class="highlight"><pre><span></span><code>ap_scan=1
 </code></pre></div>
 
-
-<div class="codehilite"><pre><span></span><code><span class="c1"># Restart to load the new configuration</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Restart to load the new configuration</span>
 sudo systemctl restart wpa_supplicant.service fruitnanny-api.service
 </code></pre></div>
-
 
 <h2 id="enable-hotspot">Enable Hotspot<a class="headerlink" href="#enable-hotspot" title="Permanent link">&para;</a></h2>
 <p>Create the NetworkManager connection profile for the Hotspot by requesting its
 connection details. These can be used to connect to the hotspot later. Enable
 the hotspot.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Show password for the hotspot</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Show password for the hotspot</span>
 curl http://localhost/api/hotspot
 
 <span class="c1"># Enable the hotspot connection (if not already enabled)</span>
@@ -1085,13 +1077,13 @@ sudo nmcli connection up <span class="s2">&quot;FruitNanny Hotspot&quot;</span>
           </a>
         
         
-          <a href="../development/api/" title="API" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../development/architecture/" title="Architecture" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                API
+                Architecture
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

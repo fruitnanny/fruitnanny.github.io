@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <link rel="canonical" href="https://fruitnanny.github.io/development/api/">
+        <link rel="canonical" href="https://fruitnanny.github.io/development/architecture/">
       
       
       <link rel="shortcut icon" href="../../images/favicon.png">
@@ -17,7 +17,7 @@
     
     
       
-        <title>API - FruitNanny</title>
+        <title>Architecture</title>
       
     
     
@@ -59,11 +59,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#api" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -88,7 +83,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              API
+              Architecture
             
           </span>
         </div>
@@ -197,7 +192,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../architecture/" class="md-tabs__link md-tabs__link--active">
+        <a href="./" class="md-tabs__link md-tabs__link--active">
           Development Guide
         </a>
       
@@ -406,18 +401,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../architecture/" title="Architecture" class="md-nav__link">
-      Architecture
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -425,13 +408,23 @@
     
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
     
-    
-    <a href="./" title="API" class="md-nav__link md-nav__link--active">
-      API
+    <a href="./" title="Architecture" class="md-nav__link md-nav__link--active">
+      Architecture
     </a>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api/" title="API" class="md-nav__link">
+      API
+    </a>
   </li>
 
         
@@ -459,27 +452,12 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/fruitnanny/fruitnanny.github.io/edit/source/docs/development/api.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/fruitnanny/fruitnanny.github.io/edit/source/docs/development/architecture.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -487,11 +465,33 @@
                   
                 
                 
-                <h1 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h1>
-<div class="admonition todo">
-<p class="admonition-title">Todo</p>
-<p>This section will describe the development of the FruitNanny API.</p>
-</div>
+                  <h1>Architecture</h1>
+                
+                <p>This section gives a quick overview about the FruitNanny software components
+and their interaction.</p>
+<p><img alt="FruitNanny Architecture" src="../../images/architecture.png"></p>
+<dl>
+<dt><a href="https://github.com/fruitnanny/fruitnanny-ui">fruitnanny-ui</a></dt>
+<dd>The Web UI running in a browser on the client device. It exposes the WebRTC
+  media stream from <em>rpi-webrtc-streamer</em> and controlling capabilities of the
+  HTTP REST if <em>fruitnanny-api</em>.</dd>
+<dt><a href="https://github.com/fruitnanny/fruitnanny-api">fruitnanny-api</a></dt>
+<dd>Provides the static web server for the web UI and REST API.
+  It controls WiFi networks via the DBus interface of NetworkManager.
+  Available wireless networks are scanned via DBus interface of wpa_supplicant.
+  The infrared light is controlled via GPIO. The new Linux GPIO char device ABI
+  is used for that.</dd>
+<dt><a href="https://github.com/kclyu/rpi-webrtc-streamer/">rpi-webrtc-streamer</a></dt>
+<dd>Provides WebRTC capabilities based on the native WebRTC code. It provides a
+  minimal signaling server via a WebSocket. The media stream is provided via
+  RTP. The only supported codec is H.264. It uses the MMAL (Multi-Media
+  Abstraction Layer) of the Raspberry Pi Broadcom VideoCore. This means the
+  video stream is encoded with hardware support making it very efficient.</dd>
+<dt><a href="https://wiki.gnome.org/Projects/NetworkManager">NetworkManager</a></dt>
+<dd>FruitNanny uses NetworkManager instead the standard Raspbian
+  <a href="https://linux.die.net/man/8/dhcpd">dhcpd(8)</a>. It exposes its functionality
+  <a href="https://developer.gnome.org/NetworkManager/stable/spec.html">via DBus</a>.</dd>
+</dl>
                 
                   
                     
@@ -500,7 +500,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: May 21, 2020
+      Last update: May 30, 2020
     
   </small>
 </div>
@@ -523,7 +523,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../architecture/" title="Architecture" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../setup/" title="Rasberry Pi Setup" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -532,19 +532,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Architecture
+                Rasberry Pi Setup
               </div>
             </div>
           </a>
         
         
-          <a href="../ui/" title="Web Interface" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../api/" title="API" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Web Interface
+                API
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

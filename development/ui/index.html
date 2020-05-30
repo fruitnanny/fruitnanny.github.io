@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ui" class="md-skip">
+        <a href="#github-repository" class="md-skip">
           Skip to content
         </a>
       
@@ -197,7 +197,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../api/" class="md-tabs__link md-tabs__link--active">
+        <a href="../architecture/" class="md-tabs__link md-tabs__link--active">
           Development Guide
         </a>
       
@@ -408,6 +408,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../architecture/" title="Architecture" class="md-nav__link">
+      Architecture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../api/" title="API" class="md-nav__link">
       API
     </a>
@@ -425,12 +437,82 @@
     
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Web Interface
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
     
     <a href="./" title="Web Interface" class="md-nav__link md-nav__link--active">
       Web Interface
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#github-repository" class="md-nav__link">
+    GitHub Repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development" class="md-nav__link">
+    Development
+  </a>
+  
+    <nav class="md-nav" aria-label="Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plugins" class="md-nav__link">
+    Plugins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#persistent-configuration" class="md-nav__link">
+    Persistent Configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#release" class="md-nav__link">
+    Release
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -454,8 +536,64 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#github-repository" class="md-nav__link">
+    GitHub Repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development" class="md-nav__link">
+    Development
+  </a>
+  
+    <nav class="md-nav" aria-label="Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plugins" class="md-nav__link">
+    Plugins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#persistent-configuration" class="md-nav__link">
+    Persistent Configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#release" class="md-nav__link">
+    Release
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -475,11 +613,80 @@
                   
                 
                 
-                <h1 id="ui">UI<a class="headerlink" href="#ui" title="Permanent link">&para;</a></h1>
-<div class="admonition todo">
-<p class="admonition-title">Todo</p>
-<p>This section will describe the development of the web UI.</p>
-</div>
+                  <h1>Web Interface</h1>
+                
+                <p>The FruitNanny is accessed via a web interface. It is desinged as <em>single-page
+application</em> and written with <a href="https://vuejs.org/">Vue.js</a> and the Material
+Design framework <a href="https://vuetifyjs.com/en/">Vuetify</a>.</p>
+<h2 id="github-repository">GitHub Repository<a class="headerlink" href="#github-repository" title="Permanent link">&para;</a></h2>
+<p>The UI is developed in its own GitHub repository. Please report any
+<a href="https://github.com/fruitnanny/fruitnanny-ui/issues">issues or feature requests</a>
+there.</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg></span> <a href="https://github.com/fruitnanny/fruitnanny-ui">fruitnanny/fruitnanny-ui</a></p>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<p>The following development tools are required:</p>
+<ul>
+<li><a href="https://nodejs.org/en/">node.js</a></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># Tools for building the Debian package</span>
+sudo apt install devscripts
+</code></pre></div>
+
+<h2 id="development">Development<a class="headerlink" href="#development" title="Permanent link">&para;</a></h2>
+<p>The source code is written in <a href="https://www.typescriptlang.org/">TypeScript</a>.
+Vue components are written as <a href="https://vuejs.org/v2/guide/single-file-components.html">single-file components</a>
+using <a href="https://github.com/vuejs/vue-class-component">vue-class-components</a>
+and <a href="https://github.com/kaorun343/vue-property-decorator">vue-property-decorator</a>
+to leverage ES6 class syntax.</p>
+<p>A special requirement for the FruitNanny web UI is the full-offline
+capability. This means the web UI needs to work in an full-offline scenario
+where the Raspberry Pi has no Internet connection. This is requires for the
+FruitNanny to work in hotspot mode.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Clone git repository</span>
+git clone https://github.com/fruitnanny/fruitnanny-ui
+
+<span class="nb">cd</span> fruitnanny-ui/
+
+<span class="c1"># Install dependencies</span>
+npm install
+
+<span class="c1"># Run development server</span>
+npm run serve
+</code></pre></div>
+
+<h3 id="plugins">Plugins<a class="headerlink" href="#plugins" title="Permanent link">&para;</a></h3>
+<p>The FruitNanny UI uses multiple Vue.js plugins in <code>src/plugins/</code>:</p>
+<dl>
+<dt><strong>Router</strong></dt>
+<dd>We use the standard <a href="https://router.vuejs.org/">vue-router</a>. The routing
+  table is defined in this plugin module.</dd>
+<dt><strong>Vuetify</strong></dt>
+<dd>Configures the Material Design color palette and dark mode.</dd>
+<dt><strong>Notify</strong></dt>
+<dd>Custom plugin for a centralized management of Material Design snackbar
+  notifications. This plugin provides a <code>$notify</code> property to all Vue
+  components that can be used to send global notifications.</dd>
+</dl>
+<h3 id="persistent-configuration">Persistent Configuration<a class="headerlink" href="#persistent-configuration" title="Permanent link">&para;</a></h3>
+<p>User-specific settings are stored in the browser
+<a href="https://developer.mozilla.org/de/docs/Web/API/Window/localStorage">LocalStorage</a>.
+The centralized API for managing user settings is the <code>src/settings.ts</code>
+module.</p>
+<h2 id="release">Release<a class="headerlink" href="#release" title="Permanent link">&para;</a></h2>
+<p>The web UI is released as Debian package. The release process is as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Update changelog</span>
+dch
+</code></pre></div>
+
+<p>The version numbering is <code>&lt;year&gt;.&lt;month&gt;.&lt;patch&gt;</code>. We do <strong>not</strong> use semantic
+versioning because we do not give guarantees about API compatibility.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Build Debian package</span>
+make deb
+</code></pre></div>
+
+<p>The Debian package will install the Vue.js production build of the app into
+<code>/usr/share/fruitnanny-ui</code>. The web directory will be used as web root by the
+<code>fruitnanny-api</code> package.</p>
                 
                   
                     
@@ -488,7 +695,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: May 21, 2020
+      Last update: May 29, 2020
     
   </small>
 </div>

@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://fruitnanny.github.io/</loc>
-     <lastmod>2020-05-27</lastmod>
+     <lastmod>2020-05-30</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://fruitnanny.github.io/user/getting-started/</loc>
-     <lastmod>2020-05-27</lastmod>
+     <lastmod>2020-05-30</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://fruitnanny.github.io/user/network/</loc>
-     <lastmod>2020-05-27</lastmod>
+     <lastmod>2020-05-30</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://fruitnanny.github.io/user/updates/</loc>
-     <lastmod>2020-05-27</lastmod>
+     <lastmod>2020-05-30</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://fruitnanny.github.io/crafting/</loc>
-     <lastmod>2020-05-27</lastmod>
+     <lastmod>2020-05-30</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://fruitnanny.github.io/setup/</loc>
-     <lastmod>2020-05-27</lastmod>
+     <lastmod>2020-05-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://fruitnanny.github.io/development/architecture/</loc>
+     <lastmod>2020-05-30</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://fruitnanny.github.io/development/api/</loc>
-     <lastmod>2020-05-27</lastmod>
+     <lastmod>2020-05-30</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://fruitnanny.github.io/development/ui/</loc>
-     <lastmod>2020-05-27</lastmod>
+     <lastmod>2020-05-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
