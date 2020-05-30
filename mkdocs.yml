@@ -14,6 +14,7 @@ nav:
      - crafting.md
      - setup.md
   - Development Guide:
+    - development/architecture.md
     - development/api.md
     - development/ui.md
 theme:
