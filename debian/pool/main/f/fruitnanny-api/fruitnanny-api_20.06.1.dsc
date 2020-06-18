@@ -5,7 +5,7 @@ Format: 3.0 (git)
 Source: fruitnanny-api
 Binary: fruitnanny-api
 Architecture: armhf
-Version: 20.05.9
+Version: 20.06.1
 Maintainer: Lucas Kahlert <lucas.kahlert@square-src.de>
 Homepage: https://github.com/f3anaro/fruitnanny-api
 Standards-Version: 4.0.0
@@ -13,17 +13,17 @@ Build-Depends: debhelper (>= 11), dh-sysuser
 Package-List:
  fruitnanny-api deb web optional arch=armhf
 Checksums-Sha1:
- d1753df4e7ad9064cf75f97dff6e997cb1f38d0a 64334 fruitnanny-api_20.05.9.git
+ 9be1083578808214f949ea02c72168a27ac3966d 64339 fruitnanny-api_20.06.1.git
 Checksums-Sha256:
- b9de97c9186faae8e3fe1fd8436b9a2bbe814830d18f81ff216080b824b504af 64334 fruitnanny-api_20.05.9.git
+ 8880fea1e57e5e77a2dbd635c7274f44817aa39629277a2af9cf4ccfa466c2f5 64339 fruitnanny-api_20.06.1.git
 Files:
- 98f7aa18a3e2e4c1913262c3f649bb9b 64334 fruitnanny-api_20.05.9.git
+ dacd31687232c204979f12ee436a62fb 64339 fruitnanny-api_20.06.1.git
 
 -----BEGIN PGP SIGNATURE-----
 
-iJIEARYIADoWIQT7ocG8bXP0WZwZ1uorWqkANDNdUQUCXuvRyBwcbHVjYXMua2Fo
-bGVydEBzcXVhcmUtc3JjLmRlAAoJECtaqQA0M11RjQoBALKSjZhQvWg5/9ntyst7
-uNhtWUGxVpRV276aflk3TMhtAQCPA6bxLxc9snLOabLwAVP7uoMzOo0Q5UzFXVJQ
-+ijrDw==
-=umQr
+iJIEARYIADoWIQT7ocG8bXP0WZwZ1uorWqkANDNdUQUCXuvawBwcbHVjYXMua2Fo
+bGVydEBzcXVhcmUtc3JjLmRlAAoJECtaqQA0M11RlqsA/jxtky24es31VPrtS1w1
+WPU0ac/rPbp4v/nJ8YYbizB3AP9wp7ucNbVFSoNH6kDjl9yd5GuIr8TbRA+K8r3g
+MSEfAQ==
+=mBP/
 -----END PGP SIGNATURE-----
